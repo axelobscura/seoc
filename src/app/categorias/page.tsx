@@ -1,6 +1,7 @@
 "use client"
 import { useState } from 'react'
 import Logo from '../components/Logo'
+import Link from 'next/link'
 
 export default function Categorias() {
     const [categorias, setCategorias] = useState([
@@ -41,7 +42,9 @@ export default function Categorias() {
             <h2 className='text-4xl text-bold text-uppercase text-gray-500 font-sans font-extralight uppercase mb-5'>CATEGORÍAS</h2>
             <div className="grid grid-cols-3 gap-4">
                 {categorias.map((val) => (
-                    <button key={val} className="font-sans rounded-full bg-blue-950 px-5 py-2 mt-3 font-sans font-extralight w-full uppercase">{val}</button>
+                    <Link href={`/categorias/${val.split(' ').join('-').toLowerCase()}`}>
+                        <button key={val} className="font-sans rounded-full bg-blue-950 px-5 py-2 mt-3 font-sans font-extralight w-full uppercase">{val}</button>
+                    </Link>
                 ))}
             </div>
         </main>
