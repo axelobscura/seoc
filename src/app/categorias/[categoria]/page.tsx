@@ -13,8 +13,6 @@ export default function Categoria() {
         '305 R-99',
         '306 88'
     ])
-
-
     const params = useParams()
     let tit = params.categoria;
     let titulo = (tit as string).split('-').join(' ').toUpperCase()
