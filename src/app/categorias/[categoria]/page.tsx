@@ -23,7 +23,7 @@ export default function Categoria() {
             <h2 className='text-4xl text-bold text-uppercase text-gray-500 font-sans font-extralight uppercase mb-5'>{titulo}</h2>
             {titulo === 'COLOCACION' && normas.map(norma => (
                 <Link className='w-full' key={norma} href={`/categorias/${tit}/${norma.split(' ').join('-')}`}>
-                    <button className="font-sans rounded-full bg-blue-950 px-5 py-2 mt-3 font-sans font-extralight w-full uppercase">{norma}</button>
+                    <button className="font-sans rounded-full bg-blue-950 px-5 py-2 mt-1 font-sans font-extralight w-full uppercase">{norma}</button>
                 </Link>
                 
             ))}
