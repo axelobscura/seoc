@@ -17,6 +17,15 @@ const config: Config = {
       fontFamily: {
         sans: ["Mulish", ...defaultTheme.fontFamily.sans],
       },
+      fontSize: {
+        'xxs': '0.625rem',    // Extra Extra Small
+        'xs': '0.75rem',      // Extra Small
+        'sm': '0.875rem',     // Small
+        'base': '1rem',       // Base size (default)
+        'lg': '1.125rem',     // Large
+        'xl': '1.25rem',      // Extra Large
+        '2xl': '1.5rem',      // 2X Large
+      },
     },
   },
   plugins: [],
