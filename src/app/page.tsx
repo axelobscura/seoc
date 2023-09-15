@@ -10,7 +10,7 @@ export default function Home() {
       <h1 className='text-4xl md:text-2md text-bold text-uppercase text-gray-500 font-sans font-extralight text-center uppercase mb-5'>Supervisor Especializado en Obras de Concreto</h1>
       <Search/>
       <Link href="/categorias">
-        <button className="rounded-full bg-blue-950 px-32 py-2 mt-5 font-sans font-extralight">CATEGORÍAS</button>
+        <button className="rounded-full bg-blue-950 px-32 py-2 mt-5 font-sans font-extralight text-white">CATEGORÍAS</button>
       </Link>
     </main>
   )
