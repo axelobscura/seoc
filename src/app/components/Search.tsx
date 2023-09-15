@@ -1,12 +1,15 @@
 "use client";
 import { useRef, RefObject } from 'react';
 import { MagnifyingGlassCircleIcon } from '@heroicons/react/24/solid'
+import { useRouter } from 'next/navigation';
 
 export default function Search() {
-  const myRef: RefObject<HTMLInputElement> = useRef<HTMLInputElement>(null);
+  const router = useRouter()
+  const myRef: RefObject<HTMLInputElement> = useRef<HTMLInputElement>(null)
 
   const buscar = (e: any) => {
-    console.log(myRef.current?.value);
+    console.log(myRef.current?.value)
+    console.log(router)
   }
 
   return(
