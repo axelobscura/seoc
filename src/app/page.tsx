@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
       <Logo/>
-      <p className='font-sans text-gray-500 font-bold'><small>Instituto Mexicano del Cemento y del Concreto A.C.</small></p>
+      <p className='font-sans text-gray-500 font-bold text-center mb-3'><small>Instituto Mexicano del Cemento y del Concreto A.C.</small></p>
       <h1 className='text-4xl md:text-2md text-bold text-uppercase text-gray-500 font-sans font-extralight text-center uppercase mb-5'>Supervisor Especializado en Obras de Concreto</h1>
       <Search/>
       <Link href="/categorias">
