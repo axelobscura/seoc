@@ -10,7 +10,7 @@ export default function Logo() {
                     alt="Supervisor Especializado en Obras de Concreto, Instituto Mexicano del Cemento y del Concreto A.C."
                     width={200}
                     height={95}
-                    className='mb-5'
+                    className='mb-1'
                 />
             </div>
         </Link>
