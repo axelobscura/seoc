@@ -13,3 +13,13 @@ export function useCategorias() {
     isError: error,
   }
 }
+
+export function useCapitulos() {
+  const { data, error } = useSWR(`/api/get-capitulos`, fetcher)
+
+  return {
+    capitulos: data,
+    isLoading: !error && !data,
+    isError: error,
+  }
+}
