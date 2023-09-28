@@ -59,7 +59,7 @@ export default function Search() {
                   <div className='sm:w-3/4 md:w-2/3 py-3 px-10 bg-gray-900 rounded-md'>
                     <h3 className='font-sans font-extralight'>Resultados para: {palabra}</h3>
                     {filtro.length >= 1 && filtro.map(filtroCat => (
-                      <Link href={`/categorias/${(filtroCat?.nombre).split(' ').join('-').toLowerCase()}`}>
+                      <Link key={filtroCat?.nombre} href={`/categorias/${(filtroCat?.nombre).split(' ').join('-').toLowerCase()}`}>
                         <p>{filtroCat?.nombre}</p>
                       </Link>
                     ))}
