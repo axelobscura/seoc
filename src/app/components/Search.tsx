@@ -1,15 +1,21 @@
 "use client";
 import { useState, useEffect, useRef, RefObject } from 'react';
+import Link from 'next/link';
 import { useCategorias } from '../../../lib/swr-hooks';
 import { MagnifyingGlassCircleIcon } from '@heroicons/react/24/solid';
 import { useRouter } from 'next/navigation';
 import Loader from './Loader';
+
+type Filtro = {
+  nombre: string;
+};
 
 export default function Search() {
   const {categorias, isLoading} = useCategorias();
   const router = useRouter()
   const myRef: RefObject<HTMLInputElement> = useRef<HTMLInputElement>(null)
   const [palabra, setPalabra] = useState('');
+  const [filtro, setFiltro] = useState<Filtro[]>([]);
 
   useEffect(() => {
     console.log(categorias);
@@ -28,7 +34,14 @@ export default function Search() {
 
   const buscarPalabra = (e: any) => {
     setPalabra(e.target.value);
+    setFiltro(
+      categorias.filter((categoria: any) => {
+        return categoria.nombre.includes(palabra)
+      })
+    )
   }
+
+  console.log(filtro)
 
   return(
     <div className='my-2 w-full'>
@@ -43,9 +56,13 @@ export default function Search() {
               </div>
               {palabra.length >= 1 &&
                 <div className='flex items-center justify-center flex-col'>
-                  <div className='sm:w-3/4 md:w-2/3 py-3 px-10 bg-gray-900 rounded-full'>
+                  <div className='sm:w-3/4 md:w-2/3 py-3 px-10 bg-gray-900 rounded-md'>
                     <h3 className='font-sans font-extralight'>Resultados para: {palabra}</h3>
-                    <p>Concreto</p>
+                    {filtro.length >= 1 && filtro.map(filtroCat => (
+                      <Link href={`/categorias/${(filtroCat?.nombre).split(' ').join('-').toLowerCase()}`}>
+                        <p>{filtroCat?.nombre}</p>
+                      </Link>
+                    ))}
                   </div>
                   
                 </div>
