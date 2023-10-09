@@ -23,7 +23,7 @@ export default function Categorias() {
             <div className="grid grid-cols-3 gap-4 mt-5">
                 {categorias.map((val: any) => (
                     <Link key={val.id} href={`/categorias/${val.url}`}>
-                        <button className="font-sans rounded-full bg-blue-950 px-5 py-2 mt-1 font-sans font-extralight w-full uppercase text-white">{val.nombre}</button>
+                        <button className="font-sans rounded-full bg-sky-900 px-5 py-2 mt-1 font-sans font-extralight w-full uppercase text-white hover:bg-sky-950">{val.nombre}</button>
                     </Link>
                 ))}
             </div>

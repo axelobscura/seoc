@@ -21,13 +21,16 @@ export default function Categoria() {
         <main className="flex min-h-screen flex-col items-center justify-center p-24">
             <Logo/>
             <p className='font-sans text-gray-500 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
-            <h2 className='text-4xl text-bold text-uppercase text-gray-500 font-sans font-extralight uppercase mb-5 mt-3'>{titulo}</h2>
+            <h2 className='text-4xl text-bold text-uppercase text-gray-100 font-sans font-extralight uppercase mb-5 mt-3'>{titulo}</h2>
             <Search/>
-            {titulo === 'COLOCACION' && normas.map(norma => (
-                <Link className='w-full' key={norma} href={`/categorias/${tit}/${norma.split(' ').join('-')}`}>
-                    <button className="font-sans rounded-full bg-blue-950 px-5 py-2 mt-3 font-sans font-extralight w-full uppercase text-white">{norma}</button>
-                </Link>
-            ))}
+            <h2 className='text-4xl text-bold text-uppercase text-gray-100 font-sans font-extralight uppercase mb-5 mt-3'>CAPÍTULOS</h2>
+            <div className="grid grid-cols-3 gap-2">
+                {titulo === 'COLOCACION' && normas.map(norma => (
+                    <Link className='w-full' key={norma} href={`/categorias/${tit}/${norma.split(' ').join('-')}`}>
+                        <button className="font-sans rounded-full bg-sky-700 px-20 py-5 mt-3 font-sans font-extralight w-full uppercase text-white">{norma}</button>
+                    </Link>
+                ))}
+            </div>
         </main>
     )
 }

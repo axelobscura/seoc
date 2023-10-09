@@ -11,8 +11,8 @@ export default function Home() {
       <p className='font-sans text-gray-500 font-bold text-center mb-3'><small>Instituto Mexicano del Cemento y del Concreto A.C.</small></p>
       <h1 className='text-4xl md:text-2md text-bold text-uppercase text-gray-100 font-sans font-extralight text-center uppercase mb-5 mt-2'>Supervisor Especializado en Obras de Concreto</h1>
       <h3 className='text-2xl text-gray-300'>SELECCIONA TU PERFIL</h3>
-      <p className='text-gray-400 my-3'>Cada perfil tiene su estilo. Y si luego quieres cambiar de perfil, no te preocupes, podrás hacerlo sin problemas.</p>
-      <div className='flex flex-row my-3 avatares'>
+      <p className='text-gray-400 my-3 uppercase'>Cada perfil tiene sus contenidos. Si quieres cambiar de perfil, no te preocupes, podrás hacerlo sin problemas.</p>
+      <div className='flex flex-col sm:flex-row my-3 avatares'>
         <div className='m-2'>
           <Link href='/categorias'>
             <div className="hover:cursor-pointer flex flex-col justify-center items-center bg-gray-800 hover:bg-gray-500 p-3 rounded-lg">
