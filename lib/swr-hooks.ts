@@ -14,9 +14,8 @@ export function useCategorias() {
   }
 }
 
-export function useCapitulos() {
-  const { data, error } = useSWR(`/api/get-capitulos`, fetcher)
-
+export function useCapitulos(id: any) {
+  const { data, error } = useSWR([`/api/get-capitulos?id=`+id], fetcher)
   return {
     capitulos: data,
     isLoading: !error && !data,

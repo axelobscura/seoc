@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import Loader from './Loader';
 
 type Filtro = {
+  id: number;
   nombre: string;
 };
 
@@ -18,7 +19,6 @@ export default function Search() {
   const [filtro, setFiltro] = useState<Filtro[]>([]);
 
   useEffect(() => {
-    console.log(categorias);
   }, [palabra])
 
   if(isLoading){
@@ -28,7 +28,6 @@ export default function Search() {
   }
 
   const buscar = (e: any) => {
-    console.log(myRef.current?.value)
     router.push(`/dashboard/${myRef.current?.value}`)
   }
 
@@ -57,7 +56,7 @@ export default function Search() {
                   <div className='sm:w-3/4 md:w-2/3 py-3 px-10 bg-gray-900 rounded-md'>
                     <h3 className='font-sans font-extralight'>Resultados para: {palabra}</h3>
                     {filtro.length >= 1 && filtro.map(filtroCat => (
-                      <Link key={filtroCat?.nombre} href={`/categorias/${(filtroCat?.nombre).split(' ').join('-').toLowerCase()}`}>
+                      <Link key={filtroCat?.nombre} href={`/categorias/${(filtroCat?.nombre).split(' ').join('-').toLowerCase()}?id=${filtroCat?.id}`}>
                         <p className='text-white p-1 bg-sky-900 hover:bg-gray-800 my-2 rounded-xl px-3'>{filtroCat?.nombre}</p>
                       </Link>
                     ))}
