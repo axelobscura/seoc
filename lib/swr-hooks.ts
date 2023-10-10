@@ -22,3 +22,12 @@ export function useCapitulos(id: any) {
     isError: error,
   }
 }
+
+export function useContenidos(id: any) {
+  const { data, error } = useSWR([`/api/get-contenidos?id=`+id], fetcher)
+  return {
+    contenidos: data,
+    isLoading: !error && !data,
+    isError: error,
+  }
+}
