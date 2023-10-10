@@ -1,7 +1,7 @@
 "use client"
 import { useParams } from 'next/navigation'
 import { useContenidos } from '../../../../../lib/swr-hooks'
-import { ChevronRightIcon } from '@heroicons/react/24/solid';
+import { ChevronRightIcon, ChevronDownIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link'
 import { useState } from 'react'
 import Logo from '../../../components/Logo'
@@ -32,13 +32,16 @@ export default function Categoria() {
             <h2 className='text-4xl text-bold text-uppercase text-gray-100 font-sans font-extralight uppercase mt-5 mb-3'>ACI {params.norma}</h2>
             <div className="grid grid-cols-1 gap-2">
                 {contenidos.map((val: any) => (
-                    <div key={val.id} className='my-3 bg-gray-900 p-5'>
+                    <div key={val.id} className='my-3 bg-gray-900 p-5 shadow-sm'>
                         <div>
                             <h3 className='flex items-center'>
                                 <ChevronRightIcon className="h-8 w-8 text-gray-300 hover:text-slate-400"/> 
                                 {val.subcategoria}
                             </h3>
-                            <h2 className='text-2xl text-white py-3 bg-gray-800 my-3 p-3'>{val.titulo}</h2>
+                            <h2 className='flex items-center text-2xl text-white py-3 bg-gray-800 my-3 p-3'>
+                                <ChevronDownIcon className="h-8 w-8 mr-2 text-gray-300 hover:text-slate-400"/> 
+                                {val.titulo}
+                            </h2>
                             <div dangerouslySetInnerHTML={{ __html: val.contenido }} className='text-white'></div>
                         </div>
                     </div>
