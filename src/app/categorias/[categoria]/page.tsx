@@ -14,8 +14,6 @@ export default function Categoria() {
 
     const {capitulos, isLoading} = useCapitulos(search);
 
-    // const [capitulos, setCapitulos] = useEffect([]);
-
     if(isLoading){
         return(
             <Loader />
@@ -24,8 +22,6 @@ export default function Categoria() {
 
     let tit = params.categoria;
     let titulo = (tit as string).split('-').join(' ').toUpperCase()
-
-    // console.log('Search params: ',search);
     
     return (
         <main className="flex min-h-screen flex-col items-center justify-center p-24">
