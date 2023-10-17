@@ -9,9 +9,7 @@ import Search from './components/Search'
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24" style={{
-      background: 'url(bkg_entrada.jpg) no-repeat center center fixed',
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center center',
+      background: 'url(bkg_entrada.jpg) no-repeat center center',
       backgroundSize: 'contain',
     }}>
       <div className='flex items-center flex-col login' style={{
