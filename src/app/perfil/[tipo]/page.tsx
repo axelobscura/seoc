@@ -1,8 +1,11 @@
 "use client"
+import { useParams, useSearchParams } from 'next/navigation'
 import Image from "next/image"
 import Link from "next/link"
 
-export default function Perfil() {
+export default function Tipo() {
+  const params = useParams()
+  let tipo = params.tipo;
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24" style={{
       background: 'url(bkg_perfil.jpg) no-repeat left center',
@@ -10,17 +13,16 @@ export default function Perfil() {
       backgroundSize: 'cover',
     }}>
       <div className="perfil">
-        <h2 className="text-gray-900 text-5xl text-center font-extralight">APRENDE O REFUERZA<br/>TUS CONOCIMIENTOS</h2>
-        <p className="text-gray-800 text-center my-10 py-3 px-5 shadow-2xl rounded-full">ELIGE COMO QUIERES ESTUDIAR</p>
+        <p className="text-white bg-blue-900 text-center my-10 py-3 px-20 shadow-2xl rounded-full">ELIGE TU PERFIL</p>
       </div>
-      <div className="grid grid-cols- gap-4 mt-5">
+      <div className="grid sm:grid-cols-1 md:grid-cols-5 gap-4 mt-5">
         <div>
-          <Link href='/perfil/puesto'>
+          <Link href='/'>
             <div>
               <Image
-                src='/tarjeta_perfil.png'
-                width='300'
-                height='300'
+                src='/tarjeta_supervisor.png'
+                width='500'
+                height='500'
                 alt=""
                 className="shadow-2xl"
               />
@@ -31,9 +33,9 @@ export default function Perfil() {
           <Link href='/'>
             <div>
               <Image
-                src='/tarjeta_comite.png'
-                width='300'
-                height='300'
+                src='/tarjeta_concretero.png'
+                width='500'
+                height='500'
                 alt=""
                 className="shadow-2xl"
               />
@@ -44,9 +46,9 @@ export default function Perfil() {
           <Link href='/'>
             <div>
               <Image
-                src='/tarjeta_busqueda.png'
-                width='300'
-                height='300'
+                src='/tarjeta_analista.png'
+                width='500'
+                height='500'
                 alt=""
                 className="shadow-2xl"
               />
@@ -57,9 +59,22 @@ export default function Perfil() {
           <Link href='/'>
             <div>
               <Image
-                src='/tarjeta_pregunta.png'
-                width='300'
-                height='300'
+                src='/tarjeta_laboratorista.png'
+                width='500'
+                height='500'
+                alt=""
+                className="shadow-2xl"
+              />
+            </div>
+          </Link>
+        </div>
+        <div>
+          <Link href='/'>
+            <div>
+              <Image
+                src='/tarjeta_contratista.png'
+                width='500'
+                height='500'
                 alt=""
                 className="shadow-2xl"
               />

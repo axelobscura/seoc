@@ -20,3 +20,9 @@ body {
   color: rgb(var(--foreground-rgb));
   background: rgb(255,255,255);
 }
+
+.shadow-custom {
+  --tw-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
