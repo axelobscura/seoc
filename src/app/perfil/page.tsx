@@ -13,7 +13,7 @@ export default function Perfil() {
         <h2 className="text-gray-900 text-5xl text-center font-extralight">APRENDE O REFUERZA<br/>TUS CONOCIMIENTOS</h2>
         <p className="text-gray-800 text-center my-10 py-3 px-5 shadow-2xl rounded-full">ELIGE COMO QUIERES ESTUDIAR</p>
       </div>
-      <div className="grid grid-cols- gap-4 mt-5">
+      <div className="grid grid-cols-4 gap-4 mt-5">
         <div>
           <Link href='/perfil/puesto'>
             <div>
