@@ -17,7 +17,7 @@ export default function Tipo() {
       </div>
       <div className="grid sm:grid-cols-1 md:grid-cols-5 gap-4 mt-5">
         <div>
-          <Link href='/'>
+          <Link href='/perfil/puesto/supervisor'>
             <div>
               <Image
                 src='/tarjeta_supervisor.png'
@@ -30,7 +30,7 @@ export default function Tipo() {
           </Link>
         </div>
         <div>
-          <Link href='/'>
+          <Link href='/perfil/puesto/concretero'>
             <div>
               <Image
                 src='/tarjeta_concretero.png'
@@ -43,7 +43,7 @@ export default function Tipo() {
           </Link>
         </div>
         <div>
-          <Link href='/'>
+          <Link href='/perfil/puesto/analista'>
             <div>
               <Image
                 src='/tarjeta_analista.png'
@@ -56,7 +56,7 @@ export default function Tipo() {
           </Link>
         </div>
         <div>
-          <Link href='/'>
+          <Link href='/perfil/puesto/laboratorista'>
             <div>
               <Image
                 src='/tarjeta_laboratorista.png'
@@ -69,7 +69,7 @@ export default function Tipo() {
           </Link>
         </div>
         <div>
-          <Link href='/'>
+          <Link href='/perfil/puesto/contratista'>
             <div>
               <Image
                 src='/tarjeta_contratista.png'
