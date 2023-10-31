@@ -1,9 +1,12 @@
 "use client"
 import { useParams } from 'next/navigation'
+import { usePerfil } from '../../../../../lib/swr-hooks'
 
 export default function Puesto() {
   const params = useParams()
   let perfil: any = params.perfil;
+  const {contenidos, isLoading} = usePerfil(perfil);
+  console.log('contenidos: ', contenidos);
   const upperCaseText: string = perfil.toUpperCase();
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24" style={{

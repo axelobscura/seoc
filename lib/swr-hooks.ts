@@ -31,3 +31,12 @@ export function useContenidos(id: any) {
     isError: error,
   }
 }
+
+export function usePerfil(perfil: any) {
+  const { data, error } = useSWR([`/api/get-perfil?perfil=`+perfil], fetcher)
+  return {
+    contenidos: data,
+    isLoading: !error && !data,
+    isError: error,
+  }
+}

@@ -1,13 +1,10 @@
 "use client"
 import { useParams } from 'next/navigation'
 import { useContenidos } from '../../../../../lib/swr-hooks'
-import { ChevronRightIcon, ChevronDownIcon } from '@heroicons/react/24/solid';
-import Link from 'next/link'
-import { useState } from 'react'
+import { ChevronRightIcon, ChevronDownIcon } from '@heroicons/react/24/solid'
 import Logo from '../../../components/Logo'
 import Loader from '@/app/components/Loader'
 import Search from '@/app/components/Search'
-
 
 export default function Categoria() {
     const params = useParams()
