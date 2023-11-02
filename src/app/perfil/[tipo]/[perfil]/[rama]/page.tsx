@@ -32,7 +32,6 @@ export default function Rama() {
         <Loader />
     )
   }
-  console.log(comites);
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-12" style={{
       background: 'url(/bkg_perfil.jpg) no-repeat left center',
@@ -50,7 +49,7 @@ export default function Rama() {
               height='200'
               style={{
                 background: '#fff',
-                width: '80%',
+                width: '100%',
               }}
               className='shadow-lg shadow-gray-400'
             />
@@ -60,13 +59,13 @@ export default function Rama() {
         <div className="col-span-2 p-4">
           <div className="grid grid-cols-4 gap-3">
               {rama === 'tema' && categorias.map((ele:any) => (
-                <Link key={ele.id} href="">
-                  <p className="flex items-center justify-center text-gray-900 text-sm p-2 text-center shadow-lg shadow-gray-400 hover:bg-gray-900 hover:text-gray-100 text-center my-0 h-14 leading-4 border border-gray-500">{ele.nombre.toUpperCase()}</p>
+                <Link key={ele.id} href={`/perfil/puesto/${perfil}/tema/${ele.url}`}>
+                  <p className="flex items-center justify-center text-gray-900 text-sm p-2 text-center shadow-lg shadow-gray-400 hover:bg-gray-900 hover:text-gray-100 text-center my-0 h-14 leading-4 border border-gray-500 rounded-full">{ele.nombre.toUpperCase()}</p>
                 </Link>
               ))}
               {rama === 'comite' && comites.map((ele:any) => (
-                <Link key={ele.id} href="">
-                  <p className="flex items-center justify-center text-gray-900 text-sm p-3 text-center shadow-lg shadow-gray-400 hover:bg-gray-900 hover:text-gray-100 text-center my-0 h-12 leading-4 border border-gray-500">{ele.nombre.toUpperCase()}</p>
+                <Link key={ele.id} href={`/perfil/puesto/${perfil}/tema/${ele.url}`}>
+                  <p className="flex items-center justify-center text-gray-900 text-sm p-3 text-center shadow-lg shadow-gray-400 hover:bg-gray-900 hover:text-gray-100 text-center my-0 h-12 leading-4 border border-gray-500 rounded-full">{ele.nombre.toUpperCase()}</p>
                 </Link>
               ))}
           </div>
