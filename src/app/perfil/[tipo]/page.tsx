@@ -2,16 +2,18 @@
 import { useParams, useSearchParams } from 'next/navigation'
 import Image from "next/image"
 import Link from "next/link"
+import LogoSeoc from '@/app/components/LogoSeoc'
 
 export default function Tipo() {
   const params = useParams()
   let tipo = params.tipo;
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24" style={{
-      background: 'url(bkg_perfil.jpg) no-repeat left center',
+      background: 'url(/bkg_perfil.jpg) no-repeat left center',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
     }}>
+      <LogoSeoc/>
       <div className="perfil">
         <p className="text-white bg-blue-900 text-center my-10 py-3 px-20 shadow-2xl rounded-full">ELIGE TU PERFIL</p>
       </div>

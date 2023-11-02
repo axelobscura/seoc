@@ -1,9 +1,6 @@
 "use client"
-import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import Image from 'next/image'
-import Link from 'next/link'
-
+import LogoSeoc from '../components/LogoSeoc';
 
 export default function Login() {
   const router = useRouter();
@@ -20,6 +17,7 @@ export default function Login() {
       backgroundPosition: 'center center',
       backgroundSize: 'cover',
     }}>
+      <LogoSeoc/>
       <div className='flex flex-col login' style={{
         'marginLeft': '55%'
       }}>

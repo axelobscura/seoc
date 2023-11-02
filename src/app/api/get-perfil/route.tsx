@@ -4,10 +4,9 @@ import { query } from '../../../../lib/db'
 export async function GET(request: Request) {
   const elPerfil = request.url.split('?')[1].split('=')[1];
   console.log('elPerfil', elPerfil)
-  
   try {
-    const results = await query(`
-      SELECT * FROM comite INNER JOIN perfil ON id = id_commite
+    const results: any = await query(`
+      SELECT * FROM perfil WHERE perfil='${elPerfil}'
     `)
     return NextResponse.json(results);
   } catch (e: any) {
