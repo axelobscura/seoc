@@ -6,14 +6,12 @@ import Search from '../components/Search'
 import Loader from '../components/Loader'
 
 export default function Categorias() {
-    const {categorias, isLoading} = useCategorias();
-
-    if(isLoading){
+    const {categorias, isLoadingCategorias} = useCategorias();
+    if(isLoadingCategorias){
         return(
             <Loader />
         )
     }
-    
     return (
         <main className="flex min-h-screen flex-col items-center justify-center p-24">
             <Logo/>

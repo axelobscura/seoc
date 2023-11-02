@@ -9,7 +9,17 @@ export function useCategorias() {
 
   return {
     categorias: data,
-    isLoading: !error && !data,
+    isLoadingCategorias: !error && !data,
+    isError: error,
+  }
+}
+
+export function useComites() {
+  const { data, error } = useSWR(`/api/get-comites`, fetcher)
+
+  return {
+    comites: data,
+    isLoadingComites: !error && !data,
     isError: error,
   }
 }

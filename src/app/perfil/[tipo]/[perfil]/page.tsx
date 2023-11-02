@@ -32,21 +32,27 @@ export default function Puesto() {
             width='200'
             height='200'
             style={{
-              background: '#fff',
               borderRadius: "50%",
-              width: '50%',
-              border: '1px solid #000'
+              width: '30%',
             }}
+            className='shadow-lg shadow-gray-400 mb-5'
           />
         </div>
         <p className="text-gray-900 text-3xl text-center font-extralight my-5">{upperCaseText}</p>
-        <p className='text-gray-900 text-1xl text-center font-extralight my-5'>SELECCIONE SU MODELO DE CONSULTA</p>
-        <div className='grid grid-cols-2 gap-4'>
+        <p className="text-gray-900 text-xs text-center font-extralight my-5 px-5">
+          {perfil === "supervisor" && `MI PRINCIPAL FUNCIÓN ES ASEGURARME DE QUE TERMINEN LOS TRABAJOS EN TIEMPO Y FORMA, CON BASE A LO ESTABLECIDO EN LOS DOCUMENTOS DE DISEÑO`}
+          {perfil === "concretero" && `REALIZO TODAS LAS ACTIVIDADES NECESARIAS PARA ENTREGAR UN CONCRETO DE BUENA CALIDAD, DESDE LA SELECCIÓN DE LOS MATERIALES, ACOMPAÑAMIENTO CON EL CLIENTE, HASTA LA ENTREGA EN CAMPO`}
+          {perfil === "analista" && `OBTENGO Y ANALIZO LOS RESULTADOS DE LA BASE DE DATOS DE CONCRETO FRESCO Y ENDURECIDO DE CADA PLANTA. SOY RESPONSABLE DIRECTO DEL LOGRO Y COMUNICACIÓN DE INDICADORES DE EFICIENCIA,Y SOBRECONSUMO PARA CADA UNA DE LAS PLANTAS.`}
+          {perfil === "laboratorista" && `REALIZAO LAS PRUEBAS AL CONCRETO FRESCO, ENDURECIDO, DURABILIDAD, PETROGRAFÍA, AGREGADOS, CEMENTO, AGUA, ETC. ALGUNAS DE ELLAS EN CAMPO,OTRAS EN NUESTRO LABORATORIO, ASEGURANDOME DE QUE EL PROCEDIMIENTO SEA CON BASE A LAS NORMAS APLICABLES`}
+          {perfil === "contratista" && `ALGUNAS DE MIS ACTIVIDADES SON RECIBIR EL CONCRETO EN OBRA, REALIZO LOS PROCEDIMIENTOS DE COLOCACIÓN, COMPACTACIÓN, CURADO, ACABADO, DE CIMBRADO, ETC.`}
+        </p>
+        <p className='text-gray-900 text-1xl text-center font-bold my-5'>SELECCIONE SU MODELO DE CONSULTA</p>
+        <div className='grid sm:grid-cols-1 md:grid-cols-2 gap-4'>
           <Link href={`/perfil/puesto/${perfil}/tema`}>
-            <p className="text-white bg-gray-900 text-center my-0 py-3 px-20 shadow-2xl">POR TEMA</p>
+            <p className="text-white bg-blue-900 text-center my-0 py-3 px-20 shadow-2xl rounded-full shadow-lg shadow-gray-400">POR TEMA</p>
           </Link>
           <Link href={`/perfil/puesto/${perfil}/comite`}>
-            <p className="text-white bg-gray-900 text-center my-0 py-3 px-20 shadow-2xl">POR COMITÉ</p>
+            <p className="text-white bg-blue-900 text-center my-0 py-3 px-20 shadow-2xl rounded-full shadow-lg shadow-gray-400">POR COMITÉ</p>
           </Link>
         </div>
       </div>
