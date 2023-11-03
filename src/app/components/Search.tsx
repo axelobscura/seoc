@@ -12,7 +12,7 @@ type Filtro = {
 };
 
 export default function Search() {
-  const {categorias, isLoading} = useCategorias();
+  const {categorias, isLoadingCategorias} = useCategorias();
   const router = useRouter()
   const myRef: RefObject<HTMLInputElement> = useRef<HTMLInputElement>(null)
   const [palabra, setPalabra] = useState('');
@@ -21,7 +21,7 @@ export default function Search() {
   useEffect(() => {
   }, [palabra])
 
-  if(isLoading){
+  if(isLoadingCategorias){
     return(
         <Loader />
     )
