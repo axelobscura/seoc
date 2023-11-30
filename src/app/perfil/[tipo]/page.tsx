@@ -15,7 +15,7 @@ export default function Tipo() {
     }}>
       <LogoSeoc/>
       <div className="perfil">
-        <p className="text-white bg-blue-900 text-center my-10 py-3 px-20 shadow-2xl rounded-full">ELIGE TU PERFIL</p>
+        <h3 className="text-white bg-blue-900 text-center my-10 py-3 px-20 text-2xl font-100 shadow-2xl rounded-full">ELIGE TU PERFIL</h3>
       </div>
       <div className="grid sm:grid-cols-1 md:grid-cols-5 gap-4 mt-5">
         <div>
