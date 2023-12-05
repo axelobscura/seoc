@@ -50,3 +50,12 @@ export function usePerfil(perfil: any) {
     isError: error,
   }
 }
+
+export function useMatrix(id: any) {
+  const { data, error } = useSWR([`/api/get-matrix?id=`+id], fetcher)
+  return {
+    matrix: data,
+    isLoading: !error && !data,
+    isError: error,
+  }
+}

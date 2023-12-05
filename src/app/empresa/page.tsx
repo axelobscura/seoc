@@ -13,7 +13,7 @@ export default function Empresa() {
       }}>
             <LogoSeoc/>
             <Logo/>
-            <p className='font-sans text-gray-500 font-bold'><small>Supervisor Especializado en Obras de Concreto....</small></p>
+            <p className='font-sans text-gray-500 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
             <div className="grid grid-cols-5 gap-4 mt-5">
               <div>
                 <Link href={{ pathname: '/perfil', query: { empresa: 'aci' } }}>

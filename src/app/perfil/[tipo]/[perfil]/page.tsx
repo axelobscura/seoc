@@ -9,7 +9,6 @@ export default function Puesto() {
   const params = useParams()
   let perfil: any = params.perfil;
   const {contenidos, isLoading} = usePerfil(perfil);
-  console.log('contenidos: ', contenidos);
   let upperCaseText: string = perfil.toUpperCase();
   if(perfil === 'supervisor'){
     upperCaseText = upperCaseText + ' DE OBRAS DE CONCRETO'
