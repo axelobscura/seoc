@@ -16,12 +16,12 @@ export default function Empresa() {
             <p className='font-sans text-gray-500 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
             <div className="grid grid-cols-5 gap-4 mt-5">
               <div>
-                <Link href={{ pathname: '/perfil', query: { empresa: 'aci' } }}>
-                  <div className="max-w-sm rounded-full overflow-hidden shadow-lg bg-gray-900 hover:bg-gray500">
+                <Link href={{ pathname: '/perfil', query: { empresa: 'astm' } }}>
+                  <div className="max-w-sm rounded-full overflow-hidden shadow-lg bg-gray-900 hover:bg-gray-500">
                     <div className="px-6 py-4">
-                      <div className="flex justify items-center">
+                      <div className="flex items-center">
                         <ChevronRightIcon className="h-8 w-8 text-gray-300 hover:text-slate-400" />
-                        <span className="text-xl font-bold">ACI</span>
+                        <span className="text-xl font-bold">ASTM</span>
                       </div>
                     </div>
                   </div>
@@ -40,24 +40,24 @@ export default function Empresa() {
                 </Link>
               </div>
               <div>
-                <Link href={{ pathname: '/perfil', query: { empresa: 'pca' } }}>
-                  <div className="max-w-sm rounded-full overflow-hidden shadow-lg bg-gray-900 hover:bg-gray-500">
+                <Link href={{ pathname: '/perfil', query: { empresa: 'aci' } }}>
+                  <div className="max-w-sm rounded-full overflow-hidden shadow-lg bg-gray-900 hover:bg-gray500">
                     <div className="px-6 py-4">
-                      <div className="flex items-center">
+                      <div className="flex justify items-center">
                         <ChevronRightIcon className="h-8 w-8 text-gray-300 hover:text-slate-400" />
-                        <span className="text-xl font-bold">PCA</span>
+                        <span className="text-xl font-bold">ACI</span>
                       </div>
                     </div>
                   </div>
                 </Link>
               </div>
               <div>
-                <Link href={{ pathname: '/perfil', query: { empresa: 'astm' } }}>
+                <Link href={{ pathname: '/perfil', query: { empresa: 'pca' } }}>
                   <div className="max-w-sm rounded-full overflow-hidden shadow-lg bg-gray-900 hover:bg-gray-500">
                     <div className="px-6 py-4">
                       <div className="flex items-center">
                         <ChevronRightIcon className="h-8 w-8 text-gray-300 hover:text-slate-400" />
-                        <span className="text-xl font-bold">ASTM</span>
+                        <span className="text-xl font-bold">PCA</span>
                       </div>
                     </div>
                   </div>

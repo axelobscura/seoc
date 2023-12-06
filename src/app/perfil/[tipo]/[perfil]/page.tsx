@@ -1,15 +1,17 @@
 "use client"
 import Link from 'next/link'
-import { useParams } from 'next/navigation'
+import { useParams, useSearchParams } from 'next/navigation'
 import { usePerfil } from '../../../../../lib/swr-hooks'
 import Image from 'next/image'
 import LogoSeoc from '@/app/components/LogoSeoc'
 
 export default function Puesto() {
   const params = useParams()
-  let perfil: any = params.perfil;
-  const {contenidos, isLoading} = usePerfil(perfil);
-  let upperCaseText: string = perfil.toUpperCase();
+  let perfil: any = params.perfil
+  const {contenidos, isLoading} = usePerfil(perfil)
+  const searchParams = useSearchParams()
+  let upperCaseText: string = perfil.toUpperCase()
+  const search = searchParams.get('empresa')
   if(perfil === 'supervisor'){
     upperCaseText = upperCaseText + ' DE OBRAS DE CONCRETO'
   }
@@ -38,6 +40,7 @@ export default function Puesto() {
           />
         </div>
         <p className="text-gray-900 text-3xl text-center font-extralight my-5">{upperCaseText}</p>
+        <p className="text-gray-100 bg-gray-900 p-3 text-1xl text-center font-medium my-5 rounded-full">{search?.toUpperCase()}</p>
         <p className="text-gray-900 text-xs text-center font-extralight my-5 px-5">
           {perfil === "supervisor" && `MI PRINCIPAL FUNCIÓN ES ASEGURARME DE QUE TERMINEN LOS TRABAJOS EN TIEMPO Y FORMA, CON BASE A LO ESTABLECIDO EN LOS DOCUMENTOS DE DISEÑO`}
           {perfil === "concretero" && `REALIZO TODAS LAS ACTIVIDADES NECESARIAS PARA ENTREGAR UN CONCRETO DE BUENA CALIDAD, DESDE LA SELECCIÓN DE LOS MATERIALES, ACOMPAÑAMIENTO CON EL CLIENTE, HASTA LA ENTREGA EN CAMPO`}

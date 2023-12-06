@@ -1,5 +1,5 @@
 "use client"
-import { useParams } from 'next/navigation'
+import { useParams, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { useCategorias } from '../../../../../../lib/swr-hooks'
 import { useComites } from '../../../../../../lib/swr-hooks'
@@ -9,13 +9,15 @@ import LogoSeoc from '@/app/components/LogoSeoc'
 import Loader from '@/app/components/Loader'
 
 export default function Rama() {
-  const {categorias, isLoadingCategorias} = useCategorias();
-  const {comites, isLoadingComites} = useComites();
+  const {categorias, isLoadingCategorias} = useCategorias()
+  const {comites, isLoadingComites} = useComites()
+  const searchParams = useSearchParams()
   const params = useParams()
-  let rama: any = params.rama;
-  let perfil: any = params.perfil;
-  let upperCaseText: string = perfil.toUpperCase();
-  let ramaUpperCase: string = rama.toUpperCase() + 'S';
+  let rama: any = params.rama
+  let perfil: any = params.perfil
+  let upperCaseText: string = perfil.toUpperCase()
+  let ramaUpperCase: string = rama.toUpperCase() + 'S'
+  const search = searchParams.get('empresa')
   if(perfil === 'supervisor'){
     upperCaseText = upperCaseText + ' DE OBRAS DE CONCRETO'
   }
@@ -55,6 +57,7 @@ export default function Rama() {
             />
           </div>
           <p className="text-gray-100 bg-gray-900 p-3 text-1xl text-center font-medium my-5">{upperCaseText}</p>
+          <p className="text-gray-100 bg-gray-900 p-3 text-1xl text-center font-medium my-5">{search?.toUpperCase()}</p>
         </div>
         <div className="col-span-2 p-4">
           <div className="grid grid-cols-4 gap-3">

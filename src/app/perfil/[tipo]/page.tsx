@@ -17,8 +17,8 @@ export default function Tipo() {
     }}>
       <LogoSeoc/>
       <div className="perfil">
-        <h3 className="font-sans text-white bg-blue-900 text-center my-10 py-3 px-20 text-2xl font-extralight shadow-2xl rounded-full">ELIGE TU PERFIL</h3>
-        <p className="font-sans text-gray-900 text-center my-10 py-3 px-20 text-2xl font-extralight shadow-2xl rounded-full">{search?.toUpperCase()}</p>
+        <p className="font-sans text-gray-900 text-center my-5 py-3 px-10 text-2xl font-extralight shadow-2xl rounded-full">{search?.toUpperCase()}</p>
+        <h3 className="font-sans text-white bg-blue-900 text-center my-5 py-2 px-20 text-2xl font-extralight shadow-2xl rounded-full">ELIGE TU PERFIL</h3>
       </div>
       <div className="grid sm:grid-cols-1 md:grid-cols-5 gap-4 mt-5">
         <div>
