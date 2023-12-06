@@ -7,7 +7,6 @@ import { useSearchParams } from 'next/navigation'
 export default function Perfil() {
   const searchParams = useSearchParams()
   const search = searchParams.get('empresa')
-  console.log(search);
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24" style={{
       background: 'url(/bkg_perfil.jpg) no-repeat left center',
@@ -21,7 +20,7 @@ export default function Perfil() {
       </div>
       <div className="grid grid-cols-4 gap-4 mt-5">
         <div>
-          <Link href='/perfil/puesto'>
+          <Link href={{ pathname: '/perfil/puesto', query: { empresa: search } }}>
             <div>
               <Image
                 src='/tarjeta_perfil.png'
@@ -34,7 +33,7 @@ export default function Perfil() {
           </Link>
         </div>
         <div>
-          <Link href='/'>
+          <Link href={{ pathname: '/categorias', query: { empresa: search } }}>
             <div>
               <Image
                 src='/tarjeta_comite.png'
@@ -47,7 +46,7 @@ export default function Perfil() {
           </Link>
         </div>
         <div>
-          <Link href='/'>
+          <Link href={{ pathname: '/buscador', query: { empresa: search } }}>
             <div>
               <Image
                 src='/tarjeta_busqueda.png'
@@ -60,7 +59,7 @@ export default function Perfil() {
           </Link>
         </div>
         <div>
-          <Link href='/'>
+          <Link href={{ pathname: '/preguntas', query: { empresa: search } }}>
             <div>
               <Image
                 src='/tarjeta_pregunta.png'

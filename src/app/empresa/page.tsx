@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Logo from '../components/Logo'
 import LogoSeoc from "../components/LogoSeoc"
-import { ChevronRightIcon, ChevronDownIcon } from '@heroicons/react/24/solid'
+import { ChevronRightIcon } from '@heroicons/react/24/solid'
 
 export default function Empresa() {
     
