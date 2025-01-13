@@ -1,9 +1,13 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 
 export default function LogoSeoc() {
+    const searchParams = useSearchParams()
+    const search = searchParams.get('empresa')
     return(
-        <Link href="/perfil" style={{
+        <Link href={{ pathname: '/perfil', query: { empresa: search }}} style={{
           position: 'fixed',
           top: '10px',
           right: '10px'
