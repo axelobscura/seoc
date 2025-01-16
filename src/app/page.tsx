@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24" style={{
       background: 'url(bkg_entrada.jpg) no-repeat center center',
-      backgroundSize: 'contain',
+      backgroundSize: 'cover',
     }}>
       <div className='flex items-center flex-col login' style={{
         'marginLeft': '55%'

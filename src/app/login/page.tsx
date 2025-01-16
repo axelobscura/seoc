@@ -21,16 +21,16 @@ export default function Login() {
       <div className='flex flex-col login' style={{
         'marginLeft': '55%'
       }}>
-        <form onSubmit={ingreso} className='mx-3 mt-1 fixed bottom-10 left-1/3 w-1/4'>
+        <form onSubmit={ingreso} className='grid grid-cols-3 gap-5 mx-0 mt-0 fixed bottom-20 left-1/4 w-1/2'>
           <div className="mb-1">
             <label className="block font-medium text-gray-900">Correo electrónico:</label>
-            <input className="block w-full px-4 py-1 border border-gray-300 bg-gray-900 text-white rounded-full focus:outline-none focus:border-blue-500 text-gray-900" type="email" id="email" name="email" />
+            <input className="block w-full px-4 py-3 border border-gray-300 bg-gray-900 text-white rounded-full focus:outline-none focus:border-blue-500 text-gray-900" type="email" id="email" name="email" />
           </div>
           <div className="mb-2">
             <label className="block font-medium text-gray-900">Contraseña:</label>
-            <input className="block w-full px-4 py-1 border border-gray-300 bg-gray-900 text-white rounded-full focus:outline-none focus:border-blue-500 text-gray-900" type="password" id="password" name="password" />
+            <input className="block w-full px-4 py-3 border border-gray-300 bg-gray-900 text-white rounded-full focus:outline-none focus:border-blue-500 text-gray-900" type="password" id="password" name="password" />
           </div>
-          <button className="bg-black text-white rounded-full py-2 px-4 w-full mt-2" type="submit">INGRESAR</button>
+          <button className="bg-black text-white rounded-full py-0 px-2 w-full m-0 p-0" type="submit">INGRESAR</button>
         </form>
       </div>
     </main>
