@@ -16,8 +16,8 @@ export default function Tema() {
         <main className="flex min-h-screen flex-col items-center justify-center p-24">
             <Image
                 src='/logo_seoc_entrada.png'
-                width='400'
-                height='400'
+                width='200'
+                height='200'
                 alt="seoc"
             />
             <p className='font-smooch text-smooch text-2xl text-gray-500 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>

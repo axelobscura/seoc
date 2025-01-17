@@ -27,8 +27,8 @@ export default function Categoria() {
         <main className="flex min-h-screen flex-col items-center justify-center p-24">
             <Image
                 src='/logo_seoc_entrada.png'
-                width='400'
-                height='400'
+                width='200'
+                height='200'
                 alt="seoc"
             />
             <p className='font-smooch text-4xl text-gray-700 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
