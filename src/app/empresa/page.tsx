@@ -1,10 +1,18 @@
 import Link from 'next/link'
+import { useCategorias } from '../../../lib/swr-hooks'
 import Logo from '../components/Logo'
 import LogoSeoc from "../components/LogoSeoc"
 import { ChevronRightIcon } from '@heroicons/react/24/solid'
+import Loader from '../components/Loader'
 
 export default function Empresa() {
-    
+    const {categorias, isLoadingCategorias} = useCategorias();
+    if(isLoadingCategorias){
+        return(
+            <Loader />
+        )
+    }
+    console.log(categorias);
     return (
       <main className="flex min-h-screen flex-col items-center justify-center p-24" style={{
         background: 'url(/bkg_perfil.jpg) no-repeat left center',
