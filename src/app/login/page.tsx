@@ -28,7 +28,7 @@ export default function Login() {
           <div className="mb-0">
             <input className="block w-full px-4 py-3 border border-gray-300 bg-gray-900 rounded-full focus:outline-none focus:border-blue-500 text-gray-900" type="password" id="password" name="password" placeholder='Contraseña' />
           </div>
-          <button className="font-smooch block text-4xl bg-black text-white rounded-full py-3 px-0 w-full m-0 font-bold" type="submit">INGRESAR</button>
+          <button className="font-smooch block text-4xl bg-black hover:bg-white text-white hover:text-black rounded-full py-3 px-0 w-full m-0 font-bold" type="submit">INGRESAR</button>
         </form>
       </div>
     </main>
