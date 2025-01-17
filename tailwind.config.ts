@@ -16,6 +16,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["Mulish", ...defaultTheme.fontFamily.sans],
+        smooch: ["Smooch Sans", "sans-serif"],
       },
       fontSize: {
         'xxs': '0.625rem',    // Extra Extra Small
