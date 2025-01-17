@@ -7,7 +7,7 @@ export default function Login() {
   const ingreso = (e: any) => {
     e.preventDefault();
     console.log('registro');
-    router.push('/empresa');
+    router.push('/tipo-de-busqueda');
   }
 
   return (
