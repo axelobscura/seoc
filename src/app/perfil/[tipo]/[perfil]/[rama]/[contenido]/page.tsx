@@ -25,7 +25,7 @@ export default function Rama() {
     <main className="flex min-h-screen flex-col items-center justify-center p-12" style={{
       background: 'url(/bkg_perfil.jpg) no-repeat left center',
       backgroundRepeat: 'no-repeat',
-      backgroundSize: 'cover',
+      backgroundSize: 'contain',
     }}>
       <LogoSeoc/>
       <div className="grid grid-cols-3 gap-4 justify-center items-top">
@@ -46,11 +46,11 @@ export default function Rama() {
           <p className="text-gray-100 bg-gray-900 p-3 text-1xl text-center font-extralight my-3">{upperCaseText} | {contenidoUpperCase}</p>
         </div>
         <div className="col-span-2 p-4 bg-white">
-          <h2 className="text-gray-900 text-5xl text-left font-extralight">{contenidoUpperCase.split('-').join(' ')}</h2>
+          <h2 className="font-smooch text-gray-900 text-5xl text-left font-extralight">{contenidoUpperCase.split('-').join(' ')}</h2>
           <hr/>
           {contenidos.map((cat: any, i: any) => (
             <div key={cat.id}>
-              <h4 className="text-gray-900 text-2xl text-left font-extralight py-3">{cat.titulo}</h4>
+              <h4 className="font-smooch text-gray-900 text-4xl text-left font-extralight py-3">{cat.titulo}</h4>
               <p className="text-gray-900 text-2sm text-left font-extralight" dangerouslySetInnerHTML={{__html: cat.contenido}}></p>
             </div>
           ))}

@@ -35,10 +35,13 @@ export default function Categoria() {
             <h2 className='font-smooch text-4xl text-bold text-uppercase text-black font-extralight uppercase mb-5 mt-3 text-center'>{titulo}</h2>
             <Search/>
             <h2 className='font-smooch text-4xl text-bold text-uppercase text-gray-900 font-extralight uppercase mb-5 mt-3'>CAPÍTULOS</h2>
-            <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-2">
+            <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 gap-2">
                 {capitulos.map((norma: any) => (
                     <Link className='w-full' key={norma} href={`/categorias/${tit}/${norma.nombre}`}>
-                        <button className="font-smooch rounded-full bg-black hover:bg-gray-100 sm:px-0 md:px-0 py-2 mt-1 font-extralight w-full uppercase text-white mb-0 hover:text-gray-900" style={{'height': '90px'}}><h3 className='text-4xl'>{norma.nombre}</h3><p className='text-2xl'>{norma.descripcion}</p></button>
+                        <button className="font-smooch rounded-full bg-black hover:bg-gray-100 sm:px-0 md:px-0 py-1 mt-1 font-extralight w-full uppercase text-white mb-0 hover:text-gray-900 px-0 mt-5">
+                            <h3 className='text-3xl font-bold'>{norma.nombre}</h3>
+                            <p className='text-2xl'>{norma.descripcion}</p>
+                        </button>
                     </Link>
                 ))}
             </div>

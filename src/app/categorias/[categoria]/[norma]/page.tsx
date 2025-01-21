@@ -5,6 +5,7 @@ import { ChevronRightIcon, ChevronDownIcon } from '@heroicons/react/24/solid'
 import Image from 'next/image'
 import Loader from '@/app/components/Loader'
 import Search from '@/app/components/Search'
+import Link from 'next/link'
 
 export default function Categoria() {
     const params = useParams()
@@ -23,12 +24,14 @@ export default function Categoria() {
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-center sm:p-10 md:p-24">
-            <Image
-                src='/logo_seoc_entrada.png'
-                width='400'
-                height='400'
-                alt="seoc"
-            />
+            <Link href="/">
+                <Image
+                    src='/logo_seoc_entrada.png'
+                    width='200'
+                    height='200'
+                    alt="seoc"
+                />
+            </Link>
             <p className='font-smooch text-gray-500 font-bold text-2xl'><small>Supervisor Especializado en Obras de Concreto</small></p>
             <Search />
             <h2 className='text-4xl text-bold text-uppercase text-gray-900 font-smooch font-bold uppercase mt-5 mb-3'>ACI {params.norma}</h2>
