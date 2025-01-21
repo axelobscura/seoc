@@ -53,11 +53,11 @@ export default function Search() {
               </div>
               {palabra.length >= 1 &&
                 <div className='flex items-center justify-center flex-col'>
-                  <div className='sm:w-3/4 md:w-2/3 py-3 px-10 bg-gray-900 rounded-md'>
-                    <h3 className='font-sans font-extralight'>Resultados para: {palabra}</h3>
+                  <div className='sm:w-3/4 md:w-2/3 py-3 px-1 bg-transparent rounded-md'>
+                    <h3 className='font-smooch text-gray-900 font-bold text-2xl'>Resultados para: {palabra}</h3>
                     {filtro.length >= 1 && filtro.map(filtroCat => (
                       <Link key={filtroCat?.nombre} href={`/categorias/${(filtroCat?.nombre).split(' ').join('-').toLowerCase()}?id=${filtroCat?.id}`}>
-                        <p className='text-white p-1 bg-sky-900 hover:bg-gray-800 my-2 rounded-xl px-3'>{filtroCat?.nombre}</p>
+                        <p className='font-smooch text-2xl text-white p-1 bg-gray-700 hover:bg-gray-800 my-2 rounded-xl px-3'>{filtroCat?.nombre}</p>
                       </Link>
                     ))}
                   </div>
