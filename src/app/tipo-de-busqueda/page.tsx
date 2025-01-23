@@ -14,12 +14,12 @@ export default function TipoDeBusqueda() {
           <h2 className='font-smooch text-4xl text-bold text-uppercase text-gray-500 uppercase mb-5'>BUSCAR POR</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-1">
             <Link href={{ pathname: '/tema' }}>
-              <div className="flex bg-gray-100 hover:bg-gray-200 items-center justify-center px-5">
-                <h2 className="font-smooch font-bold text-gray-900 hover:text-gray-900  text-8xl">POR TEMA</h2>
+              <div className="flex bg-gray-100 hover:bg-gray-700 items-center justify-center px-5">
+                <h2 className="font-smooch font-bold text-black hover:text-gray-100 text-8xl">POR TEMA</h2>
               </div>
             </Link>
             <Link href={{ pathname: '/empresa' }}>
-              <div className="flex bg-white hover:bg-gray-700 items-center justify-center px-5">
+              <div className="flex bg-gray-100 hover:bg-gray-700 items-center justify-center px-5">
                 <h2 className="font-smooch font-bold text-black hover:text-gray-100 text-8xl">POR EMPRESA</h2>
               </div>
             </Link>
