@@ -38,7 +38,7 @@ export default function Categoria() {
             <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 gap-2">
                 {capitulos.map((norma: any) => (
                     <Link className='w-full' key={norma} href={`/categorias/${tit}/${norma.nombre}`}>
-                        <button className="font-smooch rounded-full bg-black hover:bg-gray-100 sm:px-0 md:px-0 py-1 mt-1 font-extralight w-full uppercase text-white mb-0 hover:text-gray-900 px-0 mt-5">
+                        <button className="font-smooch rounded-full bg-black hover:bg-gray-100 sm:px-0 md:px-0 py-1 font-extralight w-full uppercase text-white mb-0 hover:text-gray-900 px-20 mt-5">
                             <h3 className='text-3xl font-bold'>{norma.nombre}</h3>
                             <p className='text-2xl'>{norma.descripcion}</p>
                         </button>
