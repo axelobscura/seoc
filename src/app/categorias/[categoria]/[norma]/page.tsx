@@ -23,7 +23,11 @@ export default function Categoria() {
     console.log('contenidos: ', contenidos)
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-center sm:p-10 md:p-24">
+        <main className="flex min-h-screen flex-col items-center justify-center sm:p-10 md:p-24" style={{
+            background: 'url(/bkg_entrada_cat_det.jpg) no-repeat center center fixed',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+          }}>
             <Link href="/">
                 <Image
                     src='/logo_seoc_entrada.png'

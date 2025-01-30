@@ -13,7 +13,11 @@ export default function Tema() {
         )
     };
     return (
-        <main className="flex min-h-screen flex-col items-center justify-center p-24">
+        <main className="flex min-h-screen flex-col items-center justify-center p-4 w-full" style={{
+            background: 'url(bkg_entrada_cat.jpg) no-repeat center center fixed',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+          }}>
             <Image
                 src='/logo_seoc_entrada.png'
                 width='200'
@@ -21,12 +25,12 @@ export default function Tema() {
                 alt="seoc"
             />
             <p className='font-smooch text-smooch text-2xl text-gray-500 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
-            <h2 className='font-smooch text-4xl text-bold text-uppercase text-gray-500 uppercase mb-5'>CATEGORÍAS</h2>
+            <h2 className='font-smooch text-6xl text-gray-950 mb-10'>APRENDE O REFUERZA LO APRENDIDO</h2>
             <Search/>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
+            <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 mt-5">
                 {categorias.map((val: any) => (
                     <Link key={val.id} href={`/categorias/${val.url}?id=${val.id}`}>
-                        <button className="font-smooch text-2xl rounded-full bg-black px-5 py-2 mt-1 w-full uppercase text-white hover:bg-sky-950">{val.nombre}</button>
+                        <button className="font-smooch text-2xl rounded-full bg-black px-5 py-2 mt-1 w-full uppercase text-white hover:bg-gray-700">{val.nombre}</button>
                     </Link>
                 ))}
             </div>

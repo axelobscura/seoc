@@ -24,17 +24,21 @@ export default function Categoria() {
     let titulo = (tit as string).split('-').join(' ').toUpperCase()
     
     return (
-        <main className="flex min-h-screen flex-col items-center justify-center p-24">
+        <main className="flex min-h-screen flex-col items-center justify-center p-24" style={{
+            background: 'url(/bkg_entrada_cat_item.jpg) no-repeat center center fixed',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+          }}>
             <Image
                 src='/logo_seoc_entrada.png'
                 width='200'
                 height='200'
                 alt="seoc"
             />
-            <p className='font-smooch text-4xl text-gray-700 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
-            <h2 className='font-smooch text-4xl text-bold text-uppercase text-black font-extralight uppercase mb-5 mt-3 text-center'>{titulo}</h2>
+            <p className='font-smooch text-4xl text-gray-100 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
+            <h2 className='font-smooch text-6xl text-bold text-uppercase text-gray-100 font-extralight uppercase mb-5 mt-3 text-center'>{titulo}</h2>
             <Search/>
-            <h2 className='font-smooch text-4xl text-bold text-uppercase text-gray-900 font-extralight uppercase mb-5 mt-3'>CAPÍTULOS</h2>
+            <h2 className='font-smooch text-4xl text-bold text-uppercase text-gray-100 font-extralight uppercase mb-5 mt-3'>CAPÍTULOS</h2>
             <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 gap-2">
                 {capitulos.map((norma: any) => (
                     <Link className='w-full' key={norma} href={`/categorias/${tit}/${norma.nombre}`}>
