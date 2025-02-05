@@ -1,17 +1,39 @@
 "use client"
 import Link from 'next/link'
 import Search from '../components/Search'
-import { useCategorias } from '../../../lib/swr-hooks'
+//import { useCategorias } from '../../../lib/swr-hooks'
 import Loader from '@/app/components/Loader'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 
 export default function Tema() {
-    const {categorias, isLoadingCategorias} = useCategorias();
+    //const {categorias, isLoadingCategorias} = useCategorias();
+    /*
     if(isLoadingCategorias){
         return(
             <Loader />
         )
     };
+    */
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        async function fetchPosts() {
+          const res = await fetch('/api/gets-capitulos')
+          const data = await res.json()
+          setPosts(data.reverse())
+        }
+        fetchPosts()
+    }, []);
+
+    if (!posts) return <Loader/>
+
+    if(posts.length === 0) {
+        return <Loader/>
+    };
+
+    console.log('posts: ', posts);
+
     return (
         <main className="flex min-h-screen flex-col items-center justify-center p-4 w-full" style={{
             background: 'url(bkg_entrada_cat.jpg) no-repeat center center fixed',
@@ -28,9 +50,9 @@ export default function Tema() {
             <h2 className='font-smooch text-6xl text-gray-950 mb-10'>APRENDE O REFUERZA LO APRENDIDO</h2>
             <Search/>
             <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 mt-5">
-                {categorias.map((val: any) => (
+                {posts.map((val: any) => (
                     <Link key={val.id} href={`/categorias/${val.url}?id=${val.id}`}>
-                        <button className="font-smooch text-2xl rounded-full bg-black px-5 py-2 mt-1 w-full uppercase text-white hover:bg-gray-700">{val.nombre}</button>
+                        <button className="font-smooch text-2xl rounded-full bg-black px-5 py-2 mt-1 w-full uppercase text-white hover:bg-gray-700">{val[1]}</button>
                     </Link>
                 ))}
             </div>
