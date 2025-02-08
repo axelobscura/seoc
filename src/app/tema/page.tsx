@@ -53,7 +53,7 @@ export default function Tema() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
                 {posts.map((val: any) => (
                     <Link key={val[0]} href={`/categorias/${val[1]}?id=${val[0]}`}>
-                        <button className="font-smooch text-2xl rounded-full bg-black px-5 py-2 mt-1 w-full uppercase text-white hover:bg-gray-700">{val[2]}</button>
+                        <button className="font-smooch text-2xl rounded-full bg-black px-5 py-2 mt-1 w-full uppercase text-white hover:bg-gray-700 shadow-lg">{val[2]}</button>
                     </Link>
                 )).reverse()}
             </div>
