@@ -13,7 +13,8 @@ export default function Home() {
       backgroundSize: 'cover',
     }}>
       <div className='flex items-center flex-col login bg-white bg-opacity-20 py-10 px-10' style={{
-        'marginLeft': '55%'
+        'marginLeft': '55%',
+        'boxShadow': '0 0 10px 10px rgba(0, 0, 0, 0.2)',
       }}>
         <Image
           src='/logo_seoc_entrada.png'

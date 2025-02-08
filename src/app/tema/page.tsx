@@ -47,14 +47,15 @@ export default function Tema() {
                 alt="seoc"
             />
             <p className='font-smooch text-smooch text-2xl text-gray-500 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
-            <h2 className='font-smooch text-6xl text-gray-950 mb-10'>APRENDE O REFUERZA LO APRENDIDO</h2>
+            <h2 className='font-smooch text-6xl text-gray-950 mb-2'>APRENDE O REFUERZA LO APRENDIDO</h2>
+            <h3 className='font-smooch text-2xl text-gray-950 bg-white py-3 px-36 mb-2 rounded-full shadow-lg'>SELECCIONA UN TEMA</h3>
             <Search/>
-            <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 mt-5">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
                 {posts.map((val: any) => (
-                    <Link key={val.id} href={`/categorias/${val.url}?id=${val.id}`}>
-                        <button className="font-smooch text-2xl rounded-full bg-black px-5 py-2 mt-1 w-full uppercase text-white hover:bg-gray-700">{val[1]}</button>
+                    <Link key={val[0]} href={`/categorias/${val[1]}?id=${val[0]}`}>
+                        <button className="font-smooch text-2xl rounded-full bg-black px-5 py-2 mt-1 w-full uppercase text-white hover:bg-gray-700">{val[2]}</button>
                     </Link>
-                ))}
+                )).reverse()}
             </div>
         </main>
     )
