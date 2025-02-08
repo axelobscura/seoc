@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={inter.className}>
         {children}
         <div className='flex items-center flex-col login bg-black bg-opacity-100 py-5 px-0'>
-          <p className='font-smooch text-gray-50'>®2025, Instituto Mexicano del Cemento y del Concreto A.C., Todos Los Derechos Reservados.</p>
+          <p className='font-smooch text-gray-50'>® 1953 - 2025, Instituto Mexicano del Cemento y del Concreto A.C., Todos Los Derechos Reservados.</p>
         </div>
       </body>
     </html>
