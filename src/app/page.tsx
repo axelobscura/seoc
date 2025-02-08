@@ -23,7 +23,7 @@ export default function Home() {
           alt="seoc"
         />
         <Link href='/login'>
-          <button className="bg-black text-white rounded-full py-2 px-20 mt-5 mr-7 ml-7 text-sm md:text-2xl" type="submit">INICIAR SESIÓN</button>
+          <button className="bg-black text-white rounded-full py-2 px-20 mt-5 mr-7 ml-7 text-sm md:text-1xl" type="submit">INICIAR SESIÓN</button>
         </Link>
       </div>
     </main>
