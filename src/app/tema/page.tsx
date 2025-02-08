@@ -48,9 +48,9 @@ export default function Tema() {
                     alt="seoc"
                 />
             </Link>
-            <p className='font-smooch text-smooch text-2xl text-gray-500 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
+            <p className='font-smooch text-smooch text-sm md:text-2xl text-gray-500 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
             <h2 className='font-smooch text-6xl text-gray-950 mb-2'>APRENDE O REFUERZA LO APRENDIDO</h2>
-            <h3 className='font-smooch text-2xl text-gray-950 bg-white py-3 px-36 mb-2 rounded-full shadow-lg'>SELECCIONA UN TEMA</h3>
+            <h3 className='font-smooch text-2xl text-gray-950 bg-white py-3 px-10 md:px-36 mb-2 rounded-full shadow-lg'>SELECCIONA UN TEMA</h3>
             <Search/>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
                 {posts.map((val: any) => (
