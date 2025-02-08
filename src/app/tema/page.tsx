@@ -40,12 +40,14 @@ export default function Tema() {
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
           }}>
-            <Image
-                src='/logo_seoc_entrada.png'
-                width='200'
-                height='200'
-                alt="seoc"
-            />
+            <Link href={`/`}>
+                <Image
+                    src='/logo_seoc_entrada.png'
+                    width='200'
+                    height='200'
+                    alt="seoc"
+                />
+            </Link>
             <p className='font-smooch text-smooch text-2xl text-gray-500 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
             <h2 className='font-smooch text-6xl text-gray-950 mb-2'>APRENDE O REFUERZA LO APRENDIDO</h2>
             <h3 className='font-smooch text-2xl text-gray-950 bg-white py-3 px-36 mb-2 rounded-full shadow-lg'>SELECCIONA UN TEMA</h3>
