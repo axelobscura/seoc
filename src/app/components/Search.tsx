@@ -46,7 +46,7 @@ export default function Search() {
             <span className="sr-only">Search</span>
             <div className='flex flex-col w-full'>
               <div className="flex items-center justify-center relative block w-full">
-                <input ref={myRef} className="placeholder:italic placeholder:text-slate-400 text-gray-900 block bg-white sm:w-3/4 md:w-1/2 border border-slate-300 rounded-full py-5 px-7 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Buscar por tema..." type="text" name="search" onKeyUp={buscarPalabra}/>
+                <input ref={myRef} className="placeholder:italic placeholder:text-slate-400 text-gray-900 block bg-white sm:w-3/4 md:w-1/2 border border-slate-300 rounded-full py-5 px-7 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" placeholder="Ingrese una pregunta" type="text" name="search" onKeyUp={buscarPalabra}/>
                 <span className="inset-y-0 left-0 flex items-center" onClick={buscar}>
                   <MagnifyingGlassCircleIcon className="h-16 w-16 text-gray-900 hover:text-slate-400 cursor-pointer shadow-sm"/>
                 </span>
@@ -61,7 +61,6 @@ export default function Search() {
                       </Link>
                     ))}
                   </div>
-                  
                 </div>
               }
             </div>
