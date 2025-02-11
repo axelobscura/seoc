@@ -5,6 +5,7 @@ import Search from '../components/Search'
 import Loader from '@/app/components/Loader'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import MenuSuperior from '../components/MenuSuperior'
 
 export default function Tema() {
     //const {categorias, isLoadingCategorias} = useCategorias();
@@ -32,14 +33,13 @@ export default function Tema() {
         return <Loader/>
     };
 
-    console.log('posts: ', posts);
-
     return (
         <main className="flex min-h-screen flex-col items-center justify-center p-4 w-full" style={{
             background: 'url(bkg_entrada_cat.jpg) no-repeat center center fixed',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
           }}>
+            <MenuSuperior/>
             <Link href={`/`}>
                 <Image
                     src='/logo_seoc_entrada.png'
@@ -50,12 +50,16 @@ export default function Tema() {
             </Link>
             <p className='font-smooch text-smooch text-sm md:text-2xl text-gray-500 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
             <h2 className='font-smooch text-6xl text-gray-950 mb-2'>APRENDE O REFUERZA LO APRENDIDO</h2>
-            <h3 className='font-smooch text-2xl text-gray-950 bg-white py-3 px-10 md:px-36 mb-2 rounded-full shadow-lg'>SELECCIONA UN TEMA</h3>
+            <Link href={`/secciones`}>
+                <h3 className='font-smooch text-2xl text-gray-950 bg-white py-3 px-10 md:px-36 mb-2 rounded-full shadow-lg'>SELECCIONA UN TEMA</h3>
+            </Link>
             <Search/>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
                 {posts.map((val: any) => (
                     <Link key={val[0]} href={`/categorias/${val[1]}?id=${val[0]}`}>
-                        <button className="font-smooch text-2xl rounded-full bg-black px-5 py-2 mt-1 w-full uppercase text-white hover:bg-gray-700 shadow-lg">{val[2]}</button>
+                        <button className="font-smooch text-2xl rounded-full bg-black px-5 py-2 mt-1 w-full uppercase text-white hover:bg-gray-800 border border-gray-800" style={{
+                            boxShadow: '0 0 3px 3px rgba(0, 0, 0, 0.7)',
+                        }}>{val[2]}</button>
                     </Link>
                 )).reverse()}
             </div>
