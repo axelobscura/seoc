@@ -24,9 +24,26 @@ export default function Fuente() {
                   <div>
                     <button className="font-smooch text-1xl rounded-full bg-blue-900 py-2 px-20 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">Remoción de cimbras, reapuntalamiento, curado y
                     protección</button>
+                    <ul className="list-disc pl-10 font-smooch">
+                      <li className="text-gray-900">
+                        <Link href={`/`}>Curado</Link>
+                      </li>
+                    </ul>
+                    <button className="font-smooch text-1xl rounded-full bg-blue-900 py-2 px-20 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">Losas para edificios</button>
+                    <ul className="list-disc pl-10 font-smooch">
+                      <li className="text-gray-900">
+                        <Link href={`/`}>Losas sobre terrenos</Link>
+                      </li>
+                    </ul>
                   </div>
                   <div>
                     <button className="font-smooch text-1xl rounded-full bg-blue-900 py-2 px-20 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">Métodos especiales de colocación del concreto</button>
+                    <ul className="list-disc pl-10 font-smooch">
+                      <li className="text-gray-900">
+                        <Link href={`/`}>Curado y protección</Link>
+                      </li>
+                    </ul>
+                    <button className="font-smooch text-1xl rounded-full bg-blue-900 py-2 px-20 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">Tipos especiales de concreto</button>
                   </div>
                 </div>
               </div>
