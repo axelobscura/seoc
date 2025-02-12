@@ -19,7 +19,7 @@ export default function Comparativa() {
     ]
 
     return (
-      <main className="flex min-h-screen flex-col w-full" style={{
+      <main className="flex min-h-screen flex-col w-full pb-10" style={{
         background: 'url(/bkg_entrada_cat_det.jpg) no-repeat center center fixed',
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',

@@ -24,7 +24,7 @@ export default function MenuSuperior() {
               </Link>
             </div>
             <div>
-              <Link href={`/`} className="m-0 p-0 block ml-3">
+              <Link href={`/`} className="m-0 p-0 block ml-48">
                 <Image
                   src='/logo_seoc_completo.svg'
                   width='100'
