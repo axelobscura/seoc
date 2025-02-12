@@ -26,13 +26,25 @@ export default function Fuente() {
                     protección</button>
                     <ul className="list-disc pl-10 font-smooch">
                       <li className="text-gray-900">
-                        <Link href={`/`}>Curado</Link>
+                        <Link href={`/fuente/aci/311`}>Curado</Link>
                       </li>
                     </ul>
                     <button className="font-smooch text-1xl rounded-full bg-blue-900 py-2 px-20 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">Losas para edificios</button>
                     <ul className="list-disc pl-10 font-smooch">
                       <li className="text-gray-900">
-                        <Link href={`/`}>Losas sobre terrenos</Link>
+                        <Link href={`/fuente/aci/311`}>Losas sobre terrenos</Link>
+                      </li>
+                    </ul>
+                    <button className="font-smooch text-1xl rounded-full bg-blue-900 py-2 px-20 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">Losas de pavimento y tableros de puentes</button>
+                    <ul className="list-disc pl-10 font-smooch">
+                      <li className="text-gray-900">
+                        <Link href={`/fuente/aci/311`}>Curado y protección</Link>
+                      </li>
+                    </ul>
+                    <button className="font-smooch text-1xl rounded-full bg-blue-900 py-2 px-20 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">Concreto arquitectónico</button>
+                    <ul className="list-disc pl-10 font-smooch">
+                      <li className="text-gray-900">
+                        <Link href={`/fuente/aci/311`}>Curado y protección</Link>
                       </li>
                     </ul>
                   </div>
@@ -40,10 +52,33 @@ export default function Fuente() {
                     <button className="font-smooch text-1xl rounded-full bg-blue-900 py-2 px-20 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">Métodos especiales de colocación del concreto</button>
                     <ul className="list-disc pl-10 font-smooch">
                       <li className="text-gray-900">
-                        <Link href={`/`}>Curado y protección</Link>
+                        <Link href={`/fuente/aci/311`}>Curado y protección</Link>
                       </li>
                     </ul>
                     <button className="font-smooch text-1xl rounded-full bg-blue-900 py-2 px-20 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">Tipos especiales de concreto</button>
+                    <ul className="list-disc pl-10 font-smooch">
+                      <li className="text-gray-900">
+                        <Link href={`/fuente/aci/311`}>Concreto estructural con agregado de peso ligero</Link>
+                      </li>
+                      <li className="text-gray-900">
+                        <Link href={`/fuente/aci/311`}>Concreto de baja masa volumétrica</Link>
+                      </li>
+                      <li className="text-gray-900">
+                        <Link href={`/fuente/aci/311`}>Concreto pesado</Link>
+                      </li>
+                      <li className="text-gray-900">
+                        <Link href={`/fuente/aci/311`}>Concreto de contracción compensada</Link>
+                      </li>
+                    </ul>
+                    <button className="font-smooch text-1xl rounded-full bg-blue-900 py-2 px-20 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">Pruebas al concreto</button>
+                    <ul className="list-disc pl-10 font-smooch">
+                      <li className="text-gray-900">
+                        <Link href={`/fuente/aci/311`}>Curado de especímenes a flexión</Link>
+                      </li>
+                      <li className="text-gray-900">
+                        <Link href={`/fuente/aci/311`}>Curado acelerado de especímenes de prueba</Link>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -51,8 +86,8 @@ export default function Fuente() {
                 <div className="px-5">
                   <button className="font-smooch text-2xl rounded-full bg-black px-20 py-2 mt-1 uppercase text-white hover:bg-gray-800 border border-gray-800 w-full">COMITÉ</button>
                   <div className='my-5'>
-                    <button className="font-smooch text-2xl rounded-full bg-white py-2 px-20 mt-1 uppercase text-gray-900 hover:text-gray-200 hover:bg-gray-800 w-full my-2">ACI 311-07</button>
-                    <button className="font-smooch text-2xl rounded-full bg-white py-2 px-20 mt-1 uppercase text-gray-900 hover:text-gray-200 hover:bg-gray-800 w-full my-2">ACI 302-04</button>
+                    <button className="font-smooch text-2xl rounded-full bg-white py-2 px-10 mt-1 uppercase text-gray-900 hover:text-gray-200 hover:bg-gray-800 w-full my-2">ACI 311-07</button>
+                    <button className="font-smooch text-2xl rounded-full bg-white py-2 px-10 mt-1 uppercase text-gray-900 hover:text-gray-200 hover:bg-gray-800 w-full my-2">ACI 302-04</button>
                   </div>
                 </div>
                 
