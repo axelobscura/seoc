@@ -17,10 +17,14 @@ export default function Secciones() {
           }}>
             <MenuSuperior/>
             <Link href={`/secciones`}>
-                <h3 className='font-smooch text-3xl text-gray-950 bg-white py-3 px-10 md:px-36 mb-2 rounded-full shadow-lg'>SELECCIONA TU FORMA DE ESTUDIO</h3>
+                <h3 className='font-smooch text-3xl text-gray-950 bg-white py-3 px-10 md:px-36 mb-10 rounded-full shadow-lg' style={{
+                  "boxShadow": "0 0 15px #000"
+                }}>SELECCIONA TU FORMA DE ESTUDIO</h3>
             </Link>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5 mx-10">
-                <div className='flex flex-col items-center justify-center bg-white bg-opacity-50 py-10 px-10 shadow-lg'>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-16 mt-5 mx-10">
+                <div className='flex flex-col items-center justify-center bg-white bg-opacity-50 py-10 px-10' style={{
+                  "boxShadow": "0 0 15px #000"
+                }}>
                   <h4 className='font-smooch text-4xl text-gray-950 py-1 px-10 md:px-36 mb-2 border-b-2 border-gray-900 p-4'>PERFIL</h4>
                   <Image
                       src='/iconos/perfil_icono.png'
@@ -31,7 +35,9 @@ export default function Secciones() {
                   />
                   <Link href={`/perfil`} className="font-smooch text-2xl rounded-full bg-black px-5 py-1 mt-1 w-full uppercase text-white hover:bg-gray-800 border border-gray-800 text-center">ACEPTAR</Link>
                 </div>
-                <div className='flex flex-col items-center justify-center bg-white bg-opacity-50 py-10 px-10 shadow-lg'>
+                <div className='flex flex-col items-center justify-center bg-white bg-opacity-50 py-10 px-10' style={{
+                  "boxShadow": "0 0 15px #000"
+                }}>
                   <h4 className='font-smooch text-4xl text-gray-950 py-1 px-10 md:px-36 mb-2 border-b-2 border-gray-900 p-4'>FUENTE</h4>
                   <Image
                       src='/iconos/fuente_icono.png'
@@ -42,7 +48,9 @@ export default function Secciones() {
                   />
                   <Link href={`/fuente`} className="font-smooch text-2xl rounded-full bg-black px-5 py-1 mt-1 w-full uppercase text-white hover:bg-gray-800 border border-gray-800 text-center">ACEPTAR</Link>
                 </div>
-                <div className='flex flex-col items-center justify-center bg-white bg-opacity-50 py-10 px-10 shadow-lg'>
+                <div className='flex flex-col items-center justify-center bg-white bg-opacity-50 py-10 px-10' style={{
+                  "boxShadow": "0 0 15px #000"
+                }}>
                   <h4 className='font-smooch text-4xl text-gray-950 py-1 px-10 md:px-36 mb-2 border-b-2 border-gray-900 p-4'>PREGUNTA</h4>
                   <Image
                       src='/iconos/pregunta_icono.png'

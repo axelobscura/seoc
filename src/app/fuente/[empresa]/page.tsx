@@ -20,7 +20,7 @@ export default function Fuente() {
                 <h2 className='font-smooch text-left text-8xl uppercase flex justify-start py-10 w-full px-20'>Curado</h2>
                 <Link href={`/`} className="font-smooch text-2xl rounded-full bg-black px-24 py-3 mt-1 uppercase text-white hover:bg-gray-800 border border-gray-800 text-center">ACI 311-07</Link>
                 <p className='font-smooch mt-5 py-3 text-4xl'>Manual para supervisar obras de concreto</p>
-                <div className="grid grid-cols-2 gap-4 mt-5 w-full px-20">
+                <div className="grid grid-cols-2 gap-4 mt-5 w-full px-20 bg-white bg-opacity-50 py-5">
                   <div>
                     <button className="font-smooch text-1xl rounded-full bg-blue-900 py-2 px-20 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">Remoción de cimbras, reapuntalamiento, curado y
                     protección</button>

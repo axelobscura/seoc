@@ -34,7 +34,7 @@ export default function Detalle() {
                     CURADO Y PROTECCIÓN</button>
                     <button className="font-smooch text-2xl rounded-full bg-white py-2 px-5 mt-1 uppercase text-gray-900 hover:text-gray-200 hover:bg-gray-800 my-2">CURADO</button>
                   </div>
-                  <div>
+                  <div className='bg-white bg-opacity-70 p-5'>
                     <p className='font-smooch px-5 text-2xl'>La mayoría de los documentos del contrato requieren mantener las superficies expuestas de concreto que contenga cemento Portland estándar Tipo I, continuamente húmedas por al menos 7 días. Los concretos que contienen cementos de alta resistencia temprana (Tipo Ill) requieren menos tiempo de curado húmedo, y los cementos de lento endurecimiento (Tipos II, IV, V e IP y materiales cementantes Portland puzolánicos) requieren tiempos de corados para mayores resultados. Un gran número de pruebas indican que mientras mayor es la cantidad de humedad retenida dentro del concreto, mayor es la eficiencia de corado y el desarrollo de resistencia.<br/><br/> El curado temprano y continuo también puede reducir o eliminar el agrietamiento por contracción plástica.</p>
                   </div>
                 </div>
