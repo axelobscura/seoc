@@ -43,25 +43,31 @@ export default function Login() {
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
     }}>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4 justify-center items-center bg-white bg-opacity-40 py-10 px-10 shadow-lg'>
+      <div className='grid grid-cols-1 sm:grid-cols-[1fr_1fr] md:grid-cols-2 lg:grid-cols-2 gap-4 justify-center items-center py-10 px-10 shadow-lg'>
         <div>
-          <Image
-            src='/logo_seoc_entrada.png'
-            width='400'
-            height='400'
-            alt="seoc"
-          />
+          <h3 className='text-6xl font-light border-b-2 border-gray-900 pb-5'>BIENVENIDO<br/><span className='text-3xl p-0 m-0'>A LA RED</span><br/>DE EXPERTOS EN</h3>
+          <p className='pt-5 text-6xl text-center font-extrabold'>CONSTRUCCIÓN<br/>CON<br/>CONCRETO</p>
         </div>
-        <div>
-          <form onSubmit={ingreso} className='flex flex-col gap-1 mx-0 mt-0'>
-            <div className="mb-0">
-              <input className="font-smooch text-1xl block w-full px-10 py-3 border border-gray-300 bg-gray-900 rounded-full focus:outline-none focus:border-blue-500 text-white mb-3" type="email" id="email" name="email" placeholder='Correo electrónico' />
-            </div>
-            <div className="mb-0">
-              <input className="font-smooch text-1xl block w-full px-10 py-3 border border-gray-300 bg-gray-900 rounded-full focus:outline-none focus:border-blue-500 text-white mb-3" type="password" id="password" name="password" placeholder='Contraseña' />
-            </div>
-            <button className="font-smooch block text-2xl bg-black hover:bg-white text-white hover:text-black rounded-full py-1 px-0 w-full m-0 font-bold" type="submit">INGRESAR</button>
-          </form>
+        <div className='bg-white bg-opacity-40 p-20'>
+          <div>
+            <Image
+              src='/logo_seoc_entrada.png'
+              width='400'
+              height='400'
+              alt="seoc"
+            />
+          </div>
+          <div>
+            <form onSubmit={ingreso} className='flex flex-col gap-1 mx-0 mt-0'>
+              <div className="mb-0">
+                <input className="font-smooch text-1xl block w-full px-10 py-3 border border-gray-300 bg-gray-900 rounded-full focus:outline-none focus:border-blue-500 text-white mb-3" type="email" id="email" name="email" placeholder='Correo electrónico' />
+              </div>
+              <div className="mb-0">
+                <input className="font-smooch text-1xl block w-full px-10 py-3 border border-gray-300 bg-gray-900 rounded-full focus:outline-none focus:border-blue-500 text-white mb-3" type="password" id="password" name="password" placeholder='Contraseña' />
+              </div>
+              <button className="font-smooch block text-2xl bg-black hover:bg-white text-white hover:text-black rounded-full py-1 px-0 w-full m-0 font-bold" type="submit">INGRESAR</button>
+            </form>
+          </div>
         </div>
       </div>
     </main>
