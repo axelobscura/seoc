@@ -17,7 +17,7 @@ export default function Secciones() {
           }}>
             <MenuSuperior/>
             <Link href={`/secciones`}>
-                <h3 className='font-smooch text-3xl text-gray-950 bg-white py-3 px-10 md:px-36 mb-10 rounded-full shadow-lg' style={{
+                <h3 className='font-smooch text-3xl text-gray-950 bg-white py-5 px-10 md:px-36 mb-10 rounded-full shadow-lg' style={{
                   "boxShadow": "0 0 15px #000"
                 }}>SELECCIONA TU FORMA DE ESTUDIO</h3>
             </Link>
