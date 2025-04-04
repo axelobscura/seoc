@@ -43,8 +43,8 @@ export default function Detalle() {
                 <div className="px-5">
                   <button className="font-smooch text-2xl rounded-full bg-black px-20 py-2 mt-1 uppercase text-white hover:bg-gray-800 border border-gray-800 w-full">COMITÉ</button>
                   <div className='my-5'>
-                    {certs.map((cert) => (
-                      <button className="font-smooch text-2xl rounded-full bg-white py-2 px-10 mt-1 uppercase text-gray-900 hover:text-gray-200 hover:bg-gray-800 w-full my-2">{cert}</button>
+                    {certs.map((cert, index) => (
+                      <button key={index} className="font-smooch text-2xl rounded-full bg-white py-2 px-10 mt-1 uppercase text-gray-900 hover:text-gray-200 hover:bg-gray-800 w-full my-2">{cert}</button>
                     ))}
                   </div>
                   <Link href={`/fuente/aci/311/comparativa`} className="font-smooch text-2xl rounded-full bg-black px-20 py-2 mt-1 uppercase text-white hover:bg-gray-800 border border-gray-800 w-full">COMPARATIVA</Link>

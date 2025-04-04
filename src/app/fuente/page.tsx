@@ -1,10 +1,5 @@
 "use client"
 import Link from 'next/link'
-import Search from '../components/Search'
-//import { useCategorias } from '../../../lib/swr-hooks'
-import Loader from '@/app/components/Loader'
-import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import MenuSuperior from '../components/MenuSuperior'
 
 export default function Fuente() {
