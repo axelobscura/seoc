@@ -1,6 +1,7 @@
 "use client"
 import Link from 'next/link'
 import MenuSuperior from '../components/MenuSuperior'
+import { FaArrowAltCircleRight } from "react-icons/fa"
 
 export default function Fuente() {
 
@@ -12,40 +13,38 @@ export default function Fuente() {
           }}>
             <MenuSuperior/>
             <Link href={`/secciones`}>
-                <h3 className='font-smooch text-3xl text-gray-950 bg-white py-3 px-10 md:px-36 mb-2 rounded-full shadow-lg mb-10'>FUENTE</h3>
+                <h3 className='font-smooch text-4xl text-gray-950 bg-white py-5 px-10 md:px-36 rounded-full shadow-lg mb-20'>FUENTE</h3>
             </Link>
-            <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-5 mx-10 my-5">
-                <Link href={`/fuente/aci`}>
-                  <button className="font-smooch text-2xl rounded-full bg-black px-20 py-2 mt-1 uppercase text-white hover:bg-gray-800 border border-gray-800 w-full" style={{
-                    boxShadow: '0 0 3px 3px rgba(0, 0, 0, 0.7)',
-                  }}>ACI</button>
+            <div className="max-w-6xl grid grid-cols-1 sm:grid-cols-3 gap-10 mt-5 mx-10 my-5 w-full">
+                <Link href={`/tema`}>
+                  <button className="flex flex-row font-smooch text-4xl rounded-full bg-black px-0 py-5 mt-1 uppercase text-white hover:bg-gray-200 hover:text-gray-900 border border-gray-800 w-full text-center" style={{
+                    boxShadow: '0 0 3px 3px rgba(5,5,5, 0.7)',
+                  }}><FaArrowAltCircleRight className='absolute mx-0' /><span className='relative w-full'>ACI</span></button>
                 </Link>
-                <Link href={`/fuente/astm`}>
-                  <button className="font-smooch text-2xl rounded-full bg-black px-20 py-2 mt-1 uppercase text-white hover:bg-gray-800 border border-gray-800 w-full" style={{
-                    boxShadow: '0 0 3px 3px rgba(0, 0, 0, 0.7)',
-                  }}>ASTM</button>
+                <Link href={`/tema`}>
+                  <button className="flex flex-row font-smooch text-4xl rounded-full bg-black px-0 py-5 mt-1 uppercase text-white hover:bg-gray-200 hover:text-gray-900 border border-gray-800 w-full text-center" style={{
+                    boxShadow: '0 0 3px 3px rgba(5,5,5, 0.7)',
+                  }}><FaArrowAltCircleRight className='absolute mx-0' /><span className='relative w-full'>ASTM</span></button>
                 </Link>
-                <Link href={`/fuente/nmx`}>
-                  <button className="font-smooch text-2xl rounded-full bg-black px-20 py-2 mt-1 uppercase text-white hover:bg-gray-800 border border-gray-800 w-full" style={{
-                    boxShadow: '0 0 3px 3px rgba(0, 0, 0, 0.7)',
-                  }}>NMX</button>
+                <Link href={`/tema`}>
+                  <button className="flex flex-row font-smooch text-4xl rounded-full bg-black px-0 py-5 mt-1 uppercase text-white hover:bg-gray-200 hover:text-gray-900 border border-gray-800 w-full text-center" style={{
+                    boxShadow: '0 0 3px 3px rgba(5,5,5, 0.7)',
+                  }}><FaArrowAltCircleRight className='absolute mx-0' /><span className='relative w-full'>NMX</span></button>
                 </Link>
-                <Link href={`/fuente/cfe`}>
-                  <button className="font-smooch text-2xl rounded-full bg-black px-20 py-2 mt-1 uppercase text-white hover:bg-gray-800 border border-gray-800 w-full" style={{
-                    boxShadow: '0 0 3px 3px rgba(0, 0, 0, 0.7)',
-                  }}>CFE</button>
+                <Link href={`/tema`}>
+                  <button className="flex flex-row font-smooch text-4xl rounded-full bg-black px-0 py-5 mt-1 uppercase text-white hover:bg-gray-200 hover:text-gray-900 border border-gray-800 w-full text-center" style={{
+                    boxShadow: '0 0 3px 3px rgba(5,5,5, 0.7)',
+                  }}><FaArrowAltCircleRight className='absolute mx-0' /><span className='relative w-full'>CFE</span></button>
                 </Link>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5 mx-10 justify-center items-center">
-                <Link href={`/fuente/ntc`}>
-                  <button className="font-smooch text-2xl rounded-full bg-black px-20 py-2 mt-1 uppercase text-white hover:bg-gray-800 border border-gray-800 w-full" style={{
-                    boxShadow: '0 0 3px 3px rgba(0, 0, 0, 0.7)',
-                  }}>NTC</button>
+                <Link href={`/tema`}>
+                  <button className="flex flex-row font-smooch text-4xl rounded-full bg-black px-0 py-5 mt-1 uppercase text-white hover:bg-gray-200 hover:text-gray-900 border border-gray-800 w-full text-center" style={{
+                    boxShadow: '0 0 3px 3px rgba(5,5,5, 0.7)',
+                  }}><FaArrowAltCircleRight className='absolute mx-0' /><span className='relative w-full'>NTC</span></button>
                 </Link>
-                <Link href={`/fuente/pca`}>
-                  <button className="font-smooch text-2xl rounded-full bg-black px-20 py-2 mt-1 uppercase text-white hover:bg-gray-800 border border-gray-800 w-full" style={{
-                    boxShadow: '0 0 3px 3px rgba(0, 0, 0, 0.7)',
-                  }}>PCA</button>
+                <Link href={`/tema`}>
+                  <button className="flex flex-row font-smooch text-4xl rounded-full bg-black px-0 py-5 mt-1 uppercase text-white hover:bg-gray-200 hover:text-gray-900 border border-gray-800 w-full text-center" style={{
+                    boxShadow: '0 0 3px 3px rgba(5,5,5, 0.7)',
+                  }}><FaArrowAltCircleRight className='absolute mx-0' /><span className='relative w-full'>PCA</span></button>
                 </Link>
             </div>
         </main>

@@ -22,11 +22,10 @@ export default function Login() {
 
   useEffect(() => {
     console.log("el usuario: ", usuario);
-    const testEmail = "uribe@imcyc.com";
+    const testEmail = "ruribe@imcyc.com";
     const pwd = "12345";
     if (email === testEmail && password === pwd) {
-      setIsLogged(true);
-      router.push("/tema");
+      router.push("/fuente");
     }
     if (isError) {
       alert("Error: " + isError);

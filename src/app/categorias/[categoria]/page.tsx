@@ -41,7 +41,8 @@ export default function Categoria() {
             <h2 className='font-smooch text-4xl text-bold text-uppercase text-gray-100 font-extralight uppercase mb-5 mt-3'>CAPÍTULOS</h2>
             <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 gap-2">
                 {capitulos.map((norma: any) => (
-                    <Link className='w-full' key={norma} href={`/categorias/${tit}/${norma.nombre}`}>
+                    
+                    <Link className='w-full' key={norma} href={`/fuente/aci`}>
                         <button className="font-smooch rounded-full bg-black hover:bg-gray-100 sm:px-0 md:px-0 py-1 font-extralight w-full uppercase text-white mb-0 hover:text-gray-900 px-20 mt-5">
                             <h3 className='text-3xl font-bold'>{norma.nombre}</h3>
                             <p className='text-2xl'>{norma.descripcion}</p>
