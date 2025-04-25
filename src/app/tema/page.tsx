@@ -47,12 +47,12 @@ export default function Tema() {
                 <h3 className='font-smooch text-2xl text-gray-950 bg-white py-3 px-10 md:px-36 mb-2 rounded-full shadow-lg mt-3'>SELECCIONA UN TEMA</h3>
             </Link>
             {/* <Search/> */}
-            <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 mt-5">
+            <div className="max-w-6xl grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
                 {posts.map((val: any) => (
                     // <Link key={val[0]} href={`/categorias/${val[1]}?id=${val[0]}`} className='flex flex-row items-center justify-center'>
                     <Link key={val[0]} href={`/categorias/supervision?id=1`} className='flex flex-row items-center justify-center'>
                         <FaArrowAltCircleRight style={{
-                            fontSize: '2.5rem',
+                            fontSize: '0.5rem',
                             color: '#fff',
                             marginRight: '5px',
                             background: 'black',
