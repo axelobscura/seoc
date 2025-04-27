@@ -6,9 +6,10 @@ import Loader from '@/app/components/Loader'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import MenuSuperior from '../components/MenuSuperior'
-import styles from "./page.module.css";
+//import styles from "./page.module.css";
 import PromptForm from "../components/PromptForm";
 import rehypeHighlight from 'rehype-highlight';
+import ReactMarkdown from 'react-markdown';
 
 export default function Tema() {
     const [posts, setPosts] = useState([]);
@@ -50,7 +51,7 @@ export default function Tema() {
             {choices.map((choice : any) => {
               console.log(choice);
               return (
-                <div className={styles.response} key={choice.index}>
+                <div key={choice.index}>
                   <ReactMarkdown
                     rehypePlugins={[rehypeHighlight]}
                     components={{
