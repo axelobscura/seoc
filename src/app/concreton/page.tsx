@@ -55,7 +55,7 @@ export default function Tema() {
                       pre: ({ node, ...props }) => (
                         <pre {...props} />
                       ),
-                      code: ({ node, inline, ...props }) => (
+                      code: ({ node, ...props }) => (
                         <code {...props} />
                       ),
                     }}
