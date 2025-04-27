@@ -35,10 +35,10 @@ export default function Categoria() {
                 height='200'
                 alt="seoc"
             />
-            <p className='font-smooch text-4xl text-gray-100 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
-            <h2 className='font-smooch text-6xl text-bold text-uppercase text-gray-100 font-extralight uppercase mb-5 mt-3 text-center'>{titulo}</h2>
-            <Search/>
-            <h2 className='font-smooch text-4xl text-bold text-uppercase text-gray-100 font-extralight uppercase mb-5 mt-3'>CAPÍTULOS</h2>
+            <p className='font-smooch text-4xl text-gray-900 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
+            <h2 className='font-smooch text-6xl text-bold text-uppercase text-gray-900 font-bold uppercase mb-0 mt-3 text-center bg-white px-20 py-2 rounded-lg'>COMITÉ</h2>
+            {/* <h2 className='font-smooch text-6xl text-bold text-uppercase text-gray-900 font-bold uppercase mb-5 mt-3 text-center'>{titulo}</h2> */}
+            {/* <Search/> */}
             <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 gap-2">
                 {capitulos.map((norma: any) => (
                     

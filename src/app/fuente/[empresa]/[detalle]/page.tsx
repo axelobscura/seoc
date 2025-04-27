@@ -16,6 +16,13 @@ export default function Detalle() {
       "CFE",
       "NTC",
       "PCA"
+    ];
+
+    const artics = [
+      "La mayoría de los documentos del contrato requieren mantener las superficies expuestas de concreto que contenga cemento Portland estándar Tipo I, continuamente húmedas por al menos 7 días. Los concretos que contienen cementos de alta resistencia temprana (Tipo Ill) requieren menos tiempo de curado húmedo, y los cementos de lento endurecimiento (Tipos II, IV, V e IP y materiales cementantes Portland puzolánicos) requieren tiempos de corados para mayores resultados. Un gran número de pruebas indican que mientras mayor es la cantidad de humedad retenida dentro del concreto, mayor es la eficiencia de corado y el desarrollo de resistencia.<br/><br/> El curado temprano y continuo también puede reducir o eliminar el agrietamiento por contracción plástica.",
+      "El curado es el proceso de mantener la humedad y temperatura del concreto para asegurar un desarrollo adecuado de la resistencia y durabilidad. El curado se puede lograr mediante el uso de agua, membranas curadoras, o una combinación de ambos. El curado debe comenzar tan pronto como sea posible después de que el concreto haya alcanzado su resistencia inicial y debe continuar durante un período mínimo de 7 días.",
+      "El curado es un proceso crítico en la construcción de estructuras de concreto. Un curado adecuado asegura que el concreto alcance su resistencia y durabilidad óptimas. El curado debe comenzar tan pronto como sea posible después de que el concreto haya alcanzado su resistencia inicial y debe continuar durante un período mínimo de 7 días.",
+      "El curado temprano y continuo también puede reducir o eliminar el agrietamiento por contracción plástica."
     ]
 
     return (

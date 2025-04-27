@@ -46,6 +46,14 @@ export default function Fuente() {
                     boxShadow: '0 0 3px 3px rgba(5,5,5, 0.7)',
                   }}><FaArrowAltCircleRight className='absolute mx-0' /><span className='relative w-full'>PCA</span></button>
                 </Link>
+                
+            </div>
+            <div className="max-w-6xl grid grid-cols-1 sm:grid-cols-1 gap-10 mt-5 mx-10 my-5 w-full">
+                <Link href={`/concreton`}>
+                  <button className="flex flex-row font-smooch text-4xl rounded-full bg-black px-0 py-5 mt-1 uppercase text-white hover:bg-gray-200 hover:text-gray-900 border border-gray-800 w-full text-center" style={{
+                    boxShadow: '0 0 3px 3px rgba(5,5,5, 0.7)',
+                  }}><FaArrowAltCircleRight className='absolute mx-0' /><span className='relative w-full'>ASISTENTE CONCRETÓN SUPERVISOR</span></button>
+                </Link>
             </div>
         </main>
     )
