@@ -1,12 +1,9 @@
 "use client"
 import Link from 'next/link'
-import Search from '../components/Search'
-//import { useCategorias } from '../../../lib/swr-hooks'
 import Loader from '@/app/components/Loader'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import MenuSuperior from '../components/MenuSuperior'
-//import styles from "./page.module.css";
 import PromptForm from "../components/PromptForm";
 import rehypeHighlight from 'rehype-highlight';
 import ReactMarkdown from 'react-markdown';
