@@ -10,17 +10,15 @@ import Link from 'next/link'
 export default function Categoria() {
     const params = useParams()
     let tit = params.categoria;
-    let norm = params.norma;
+    let norma = params.norma;
 
-    const {contenidos, isLoading} = useContenidos(norm);
+    const {contenidos, isLoading} = useContenidos(norma);
 
     if(isLoading){
         return(
             <Loader />
         )
     }
-
-    console.log('contenidos: ', contenidos)
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-center sm:p-10 md:p-24" style={{

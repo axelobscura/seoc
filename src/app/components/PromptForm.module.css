@@ -6,20 +6,24 @@
   border: 1px solid #97999a;
   border-radius: 4px;
   margin-bottom: 1rem;
+  margin-right: 20px;
 }
 
 
 .submitButton {
-  padding: 0.8rem 3rem;
+  padding: 0rem 3rem;
   border: 0;
   font-family: inherit;
   background: #061420;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   cursor:pointer;
   border-radius: 120px;
   font-weight: 200;
   text-transform: uppercase;
+  font-weight: bold;
+  height: 80px;
+  margin: 10px;
 }
 
 .submitButton[disabled] {

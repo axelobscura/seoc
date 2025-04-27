@@ -21,7 +21,6 @@ export default function Login() {
   };
 
   useEffect(() => {
-    console.log("el usuario: ", usuario);
     const testEmail = "ruribe@imcyc.com";
     const pwd = "12345";
     if (email === testEmail && password === pwd) {

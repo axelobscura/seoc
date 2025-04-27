@@ -45,26 +45,7 @@ export default function Tema() {
             </Link>
             <p className='font-smooch text-smooch text-sm md:text-2xl text-gray-500 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
             <h2 className='font-smooch text-6xl text-gray-950 mb-2 border-b-2 border-gray-900 pb-3'>ASISTENTE CONCRETÓN SUPERVISOR</h2>
-            {choices.map((choice : any) => {
-              console.log(choice);
-              return (
-                <div key={choice.index}>
-                  <ReactMarkdown
-                    rehypePlugins={[rehypeHighlight]}
-                    components={{
-                      pre: ({ node, ...props }) => (
-                        <pre {...props} />
-                      ),
-                      code: ({ node, ...props }) => (
-                        <code {...props} />
-                      ),
-                    }}
-                  >
-                    {choice.message.content}
-                  </ReactMarkdown>
-                </div>
-              );
-            })}
+
             <PromptForm
               isLoading={isLoading}
               onSubmit={async (prompt : any) => {
@@ -84,6 +65,28 @@ export default function Tema() {
                 setChoices(result.choices);
               }}
             />
+
+            {choices.map((choice : any) => {
+              console.log(choice);
+              return (
+                <div key={choice.index} className='bg-black p-9'>
+                  <ReactMarkdown
+                    rehypePlugins={[rehypeHighlight]}
+                    components={{
+                      pre: ({ node, ...props }) => (
+                        <pre {...props} />
+                      ),
+                      code: ({ node, ...props }) => (
+                        <code {...props} />
+                      ),
+                    }}
+                  >
+                    {choice.message.content}
+                  </ReactMarkdown>
+                </div>
+              );
+            })}
+            
         </main>
     )
 }

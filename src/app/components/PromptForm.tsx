@@ -19,10 +19,10 @@ export default function PromptForm({ onSubmit, isLoading } : {
         onSubmit(prompt);
         setPrompt("");
       }}
+      className="flex items-center justify-center"
     >
-      <label className={styles.label}>Ingrese una consulta:</label>
       <input
-        className={styles.input}
+        className="rounded-full p-5 text-gray-800 text-2xl my-4 w-full"
         type="text"
         value={prompt}
         onChange={(e) => {

@@ -7,13 +7,17 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import MenuSuperior from '../components/MenuSuperior'
 import { FaArrowAltCircleRight } from "react-icons/fa"
+import { useSearchParams } from 'next/navigation'
 
 export default function Tema() {
+    const searchParams = useSearchParams();
     const [posts, setPosts] = useState([]);
+
+    const empresa = searchParams.get('empresa');
 
     useEffect(() => {
         async function fetchPosts() {
-          const res = await fetch('/api/gets-capitulos')
+          const res = await fetch('/api/get-categorias')
           const data = await res.json()
           setPosts(data.reverse())
         }
@@ -44,13 +48,16 @@ export default function Tema() {
             <p className='font-smooch text-smooch text-sm md:text-2xl text-gray-500 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
             <h2 className='font-smooch text-6xl text-gray-950 mb-2 border-b-2 border-gray-900 pb-3'>APRENDE O REFUERZA LO APRENDIDO</h2>
             <Link href={`/secciones`}>
-                <h3 className='font-smooch text-2xl text-gray-950 bg-white py-3 px-10 md:px-36 mb-2 rounded-full shadow-lg mt-3'>SELECCIONA UN TEMA</h3>
+                <h3 className='font-smooch text-2xl text-gray-950 bg-white py-3 px-10 md:px-36 mb-2 rounded-full shadow-lg mt-3'>SELECCIONA UN TEMA {empresa}</h3>
             </Link>
             {/* <Search/> */}
             <div className="max-w-6xl grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
                 {posts.map((val: any) => (
-                    // <Link key={val[0]} href={`/categorias/${val[1]}?id=${val[0]}`} className='flex flex-row items-center justify-center'>
-                    <Link key={val[0]} href={`/categorias/supervision?id=1`} className='flex flex-row items-center justify-center'>
+                    <Link 
+                        key={val[0]} 
+                        href={`/categorias/${val.url}?id=${val.id}`} 
+                        className='flex flex-row items-center justify-center'
+                    >
                         <FaArrowAltCircleRight style={{
                             fontSize: '0.5rem',
                             color: '#fff',
@@ -59,7 +66,7 @@ export default function Tema() {
                             borderRadius: '50%',
                             padding: '5px',
                         }} className='hover:bg-gray-200' />
-                        <button className="font-smooch text-2xl rounded-full bg-black px-5 py-2 mt-1 w-full uppercase text-white font-bold hover:bg-gray-100 hover:text-gray-900 transition-all border border-gray-800 hover:border-slate-300 text-left">{val[2]}</button>
+                        <button className="font-smooch text-2xl rounded-full bg-black px-5 py-2 mt-1 w-full uppercase text-white font-bold hover:bg-gray-100 hover:text-gray-900 transition-all border border-gray-800 hover:border-slate-300 text-left">{val.nombre}</button>
                     </Link>
                 )).reverse()}
             </div>
