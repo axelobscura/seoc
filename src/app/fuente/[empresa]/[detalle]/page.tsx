@@ -39,7 +39,7 @@ export default function Detalle() {
                   </div>
                   <div className='bg-white bg-opacity-70 p-5 text-gray-900 py-9'>
                     {contenido.map((cont: any, index: any) => (
-                      <div dangerouslySetInnerHTML={{__html: cont.contenido}}/>
+                      <div key={index} dangerouslySetInnerHTML={{__html: cont.contenido}}/>
                     ))}
                   </div>
                 </div>
