@@ -45,7 +45,7 @@ export default function Tema() {
                   priority
                 />
             </Link>
-            <p className='font-smooch text-smooch text-sm md:text-2xl text-gray-500 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
+            <p className='font-smooch text-smooch text-sm md:text-2xl text-gray-100 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
             <h2 className='font-smooch text-6xl text-gray-950 mb-2 border-b-2 border-gray-900 pb-3'>ASISTENTE CONCRETÓN SUPERVISOR</h2>
 
             <PromptForm
