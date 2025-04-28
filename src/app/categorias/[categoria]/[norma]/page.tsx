@@ -38,8 +38,8 @@ export default function Categoria() {
             <Search />
             <h2 className='text-4xl text-bold text-uppercase text-gray-900 font-smooch font-bold uppercase mt-5 mb-3'>ACI {params.norma}</h2>
             <div className="grid grid-cols-1 gap-2">
-                {contenidos.map((val: any) => (
-                    <div key={val.id} className='font-smooch tex-4xl my-3 p-5 shadow-sm'>
+                {contenidos.map((val: any, index: any) => (
+                    <div key={index} className='font-smooch tex-4xl my-3 p-5 shadow-sm'>
                         <div>
                             <h3 className='flex items-center text-4xl'>
                                 <ChevronRightIcon className="h-8 w-8 text-gray-900 hover:text-slate-400"/> 

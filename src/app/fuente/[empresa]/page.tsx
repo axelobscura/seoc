@@ -40,7 +40,9 @@ export default function Fuente() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5 w-full px-20 bg-white bg-opacity-50 py-5">
             <div>
               {contenido && contenido.map((ent: any, index: any) => (
-                <button key={index} className="font-smooch text-2xl sm:rounded-full bg-blue-900 py-2 px-50 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">{ent.titulo}</button>
+                <button key={index} className="font-smooch text-2xl sm:rounded-full bg-blue-900 py-2 px-50 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">
+                  <Link href={`/fuente/aci/311`}>{ent.titulo}</Link>
+                </button>
               ))};
 
 

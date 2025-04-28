@@ -2,28 +2,27 @@
 import Link from 'next/link'
 import Search from '../../../components/Search'
 //import { useCategorias } from '../../../lib/swr-hooks'
-import Loader from '@/app/components/Loader'
-import { useState, useEffect } from 'react'
-import Image from 'next/image'
+import { useContenido } from '../../../../../lib/swr-hooks'
 import MenuSuperior from '../../../components/MenuSuperior'
+import { useParams, useSearchParams } from 'next/navigation';
+import Loader from '@/app/components/Loader'
 
 export default function Detalle() {
+    const params = useParams()
+    const searchParams = useSearchParams();
+  const norma = searchParams.get('norma');
+  const id = searchParams.get('id');
+    console.log(id);
+    console.log(norma);
+    const { contenido, isLoadingContenido } = useContenido(norma, id);
 
-    const certs = [
-      "ACI",
-      "ASTM",
-      "NMX",
-      "CFE",
-      "NTC",
-      "PCA"
-    ];
+    if(isLoadingContenido){
+        return(
+            <Loader />
+        )
+    }
 
-    const artics = [
-      "La mayoría de los documentos del contrato requieren mantener las superficies expuestas de concreto que contenga cemento Portland estándar Tipo I, continuamente húmedas por al menos 7 días. Los concretos que contienen cementos de alta resistencia temprana (Tipo Ill) requieren menos tiempo de curado húmedo, y los cementos de lento endurecimiento (Tipos II, IV, V e IP y materiales cementantes Portland puzolánicos) requieren tiempos de corados para mayores resultados. Un gran número de pruebas indican que mientras mayor es la cantidad de humedad retenida dentro del concreto, mayor es la eficiencia de corado y el desarrollo de resistencia.<br/><br/> El curado temprano y continuo también puede reducir o eliminar el agrietamiento por contracción plástica.",
-      "El curado es el proceso de mantener la humedad y temperatura del concreto para asegurar un desarrollo adecuado de la resistencia y durabilidad. El curado se puede lograr mediante el uso de agua, membranas curadoras, o una combinación de ambos. El curado debe comenzar tan pronto como sea posible después de que el concreto haya alcanzado su resistencia inicial y debe continuar durante un período mínimo de 7 días.",
-      "El curado es un proceso crítico en la construcción de estructuras de concreto. Un curado adecuado asegura que el concreto alcance su resistencia y durabilidad óptimas. El curado debe comenzar tan pronto como sea posible después de que el concreto haya alcanzado su resistencia inicial y debe continuar durante un período mínimo de 7 días.",
-      "El curado temprano y continuo también puede reducir o eliminar el agrietamiento por contracción plástica."
-    ]
+    console.log(contenido);
 
     return (
       <main className="flex min-h-screen flex-col w-full" style={{
@@ -34,15 +33,16 @@ export default function Detalle() {
             <MenuSuperior/>
             <div className="grid grid-cols-[4fr_1fr] gap-4 min-h-screen">
               <div className='flex flex-col items-center justify-center'>
-                <h2 className='font-smooch text-left text-8xl uppercase flex justify-start py-5 w-full px-20'>Curado</h2>
                 <div className="grid grid-cols-1 gap-4 mt-0 w-full px-20">
                   <div className='flex flex-row items-center justify-start gap-3'>
                     <button className="font-smooch text-2xl rounded-full bg-blue-900 py-2 px-5 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 my-2">REMOCIÓN DE CIMBRAS, REAPUNTALAMIENTO,
                     CURADO Y PROTECCIÓN</button>
                     <button className="font-smooch text-2xl rounded-full bg-white py-2 px-5 mt-1 uppercase text-gray-900 hover:text-gray-200 hover:bg-gray-800 my-2">CURADO</button>
                   </div>
-                  <div className='bg-white bg-opacity-70 p-5'>
-                    <p className='font-smooch px-5 text-2xl'>La mayoría de los documentos del contrato requieren mantener las superficies expuestas de concreto que contenga cemento Portland estándar Tipo I, continuamente húmedas por al menos 7 días. Los concretos que contienen cementos de alta resistencia temprana (Tipo Ill) requieren menos tiempo de curado húmedo, y los cementos de lento endurecimiento (Tipos II, IV, V e IP y materiales cementantes Portland puzolánicos) requieren tiempos de corados para mayores resultados. Un gran número de pruebas indican que mientras mayor es la cantidad de humedad retenida dentro del concreto, mayor es la eficiencia de corado y el desarrollo de resistencia.<br/><br/> El curado temprano y continuo también puede reducir o eliminar el agrietamiento por contracción plástica.</p>
+                  <div className='bg-white bg-opacity-70 p-5 text-gray-900 py-9'>
+                    {contenido.map((cont: any, index: any) => (
+                      <div dangerouslySetInnerHTML={{__html: cont.contenido}}/>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -50,9 +50,7 @@ export default function Detalle() {
                 <div className="px-5">
                   <button className="font-smooch text-2xl rounded-full bg-black px-20 py-2 mt-1 uppercase text-white hover:bg-gray-800 border border-gray-800 w-full">COMITÉ</button>
                   <div className='my-5'>
-                    {certs.map((cert, index) => (
-                      <button key={index} className="font-smooch text-2xl rounded-full bg-white py-2 px-10 mt-1 uppercase text-gray-900 hover:text-gray-200 hover:bg-gray-800 w-full my-2">{cert}</button>
-                    ))}
+
                   </div>
                   <Link href={`/fuente/aci/311/comparativa`} className="font-smooch text-2xl rounded-full bg-black px-20 py-2 mt-1 uppercase text-white hover:bg-gray-800 border border-gray-800 w-full">COMPARATIVA</Link>
                 </div>
