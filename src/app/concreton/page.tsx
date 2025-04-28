@@ -37,10 +37,12 @@ export default function Tema() {
             <MenuSuperior/>
             <Link href={`/`}>
                 <Image
-                    src='/logo_seoc_entrada.png'
-                    width='200'
-                    height='200'
-                    alt="seoc"
+                  className="mb-10"
+                  src="/concreton.png"
+                  alt="Next.js logo"
+                  width={200}
+                  height={38}
+                  priority
                 />
             </Link>
             <p className='font-smooch text-smooch text-sm md:text-2xl text-gray-500 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
