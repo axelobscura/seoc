@@ -42,6 +42,15 @@ export function useComite(norma: any, id: any) {
   }
 }
 
+export function useContenido(norma: any, id: any) {
+  const { data, error } = useSWR([`/api/get-contenido?norma=`+norma+`&id=`+id], fetcher)
+  return {
+    contenido: data,
+    isLoadingContenido: !error && !data,
+    isError: error,
+  }
+}
+
 export function useUsuario(email: any, password: any) {
   const { data, error } = useSWR([`/api/get-usuario?email=`+email+`&password=`+password], fetcher)
   return {

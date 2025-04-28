@@ -2,7 +2,7 @@
 import { useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import MenuSuperior from '../../components/MenuSuperior';
-import { useComite } from '../../../../lib/swr-hooks';
+import { useComite, useContenido } from '../../../../lib/swr-hooks';
 import Loader from '@/app/components/Loader';
 
 export default function Fuente() {
@@ -10,6 +10,7 @@ export default function Fuente() {
   const norma = searchParams.get('norma');
   const id = searchParams.get('id');
   const { comite, isLoading } = useComite(norma, id);
+  const { contenido, isLoadingContenido } = useContenido(norma, id);
 
   if (isLoading) {
     return (
@@ -17,7 +18,13 @@ export default function Fuente() {
     )
   };
 
-  console.log(comite);
+  if (isLoadingContenido) {
+    return (
+      <Loader />
+    )
+  };
+
+  console.log("contenido: ",contenido);
 
   return (
     <main className="flex min-h-screen flex-col w-full" style={{
@@ -30,9 +37,15 @@ export default function Fuente() {
         <div className='flex flex-col items-center justify-center'>
           <Link href={`/`} className="font-smooch text-4xl rounded-full bg-black px-24 py-3 mt-1 uppercase text-white hover:bg-gray-800 border border-gray-800 text-center">{norma}</Link>
           <p className='font-smooch mt-5 py-3 text-4xl text-gray-800'>{comite.length && comite[0].descripcion}</p>
-          <div className="grid grid-cols-2 gap-4 mt-5 w-full px-20 bg-white bg-opacity-50 py-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5 w-full px-20 bg-white bg-opacity-50 py-5">
             <div>
-              <button className="font-smooch text-2xl rounded-full bg-blue-900 py-2 px-50 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">Remoción de cimbras, reapuntalamiento, curado y
+              {contenido && contenido.map((ent: any, index: any) => (
+                <button key={index} className="font-smooch text-2xl sm:rounded-full bg-blue-900 py-2 px-50 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">{ent.titulo}</button>
+              ))};
+
+
+
+              {/* <button className="font-smooch text-2xl sm:rounded-full bg-blue-900 py-2 px-50 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">Remoción de cimbras, reapuntalamiento, curado y
                 protección</button>
               <ul className="list-disc pl-10 font-smooch">
                 <li className="text-gray-900 text-2xl">
@@ -56,9 +69,9 @@ export default function Fuente() {
                 <li className="text-gray-900 text-2xl">
                   <Link href={`/fuente/aci/311`}>Curado y protección</Link>
                 </li>
-              </ul>
+              </ul> */}
             </div>
-            <div>
+            {/* <div>
               <button className="font-smooch text-2xl rounded-full bg-blue-900 py-2 px-50 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 w-full my-2">Métodos especiales de colocación del concreto</button>
               <ul className="list-disc pl-10 font-smooch">
                 <li className="text-gray-900 text-2xl">
@@ -89,7 +102,7 @@ export default function Fuente() {
                   <Link href={`/fuente/aci/311`}>Curado acelerado de especímenes de prueba</Link>
                 </li>
               </ul>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="flex flex-col bg-gray-900 bg-opacity-70 min-h-screen justify-center items-center">
