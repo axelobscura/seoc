@@ -22,8 +22,6 @@ export default function Detalle() {
         )
     }
 
-    console.log(contenido);
-
     return (
       <main className="flex min-h-screen flex-col w-full" style={{
         background: 'url(/bkg_entrada_cat_det.jpg) no-repeat center center fixed',
