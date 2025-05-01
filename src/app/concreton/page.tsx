@@ -55,18 +55,11 @@ export default function Tema() {
                   <ReactMarkdown
                     rehypePlugins={[rehypeHighlight]}
                     components={{
-                      pre: ({ node, ...props } : {
-                        node: any;
-                        [key: string]: any;
-                      }) => (
+                      pre: ({ node, ...props }) => (
                         <pre className={styles.codeBlock} {...props} />
                       ),
-                      code: ({ node, inline, ...props } : {
-                        node: any;
-                        inline: boolean;
-                        [key: string]: any;
-                      }) => (
-                        <code className={inline ? styles.inlineCode : styles.codeContent} {...props} />
+                      code: ({ node, ...props }) => (
+                        <code {...props} />
                       ),
                     }}
                   >
