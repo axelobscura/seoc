@@ -1,12 +1,15 @@
 "use client"
 import Link from 'next/link'
+import Search from '../components/Search'
+//import { useCategorias } from '../../../lib/swr-hooks'
 import Loader from '@/app/components/Loader'
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import MenuSuperior from '../components/MenuSuperior'
+import styles from "./page.module.css";
 import PromptForm from "../components/PromptForm";
-import rehypeHighlight from 'rehype-highlight';
 import ReactMarkdown from 'react-markdown';
+import rehypeHighlight from 'rehype-highlight';
 
 export default function Tema() {
     const [posts, setPosts] = useState([]);
@@ -37,17 +40,41 @@ export default function Tema() {
             <MenuSuperior/>
             <Link href={`/`}>
                 <Image
-                  className="mb-10"
-                  src="/concreton.png"
-                  alt="Next.js logo"
-                  width={200}
-                  height={38}
-                  priority
+                    src='/concreton.png'
+                    width='200'
+                    height='200'
+                    alt="seoc"
                 />
             </Link>
             <p className='font-smooch text-smooch text-sm md:text-2xl text-gray-100 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
             <h2 className='font-smooch text-6xl text-gray-950 mb-2 border-b-2 border-gray-900 pb-3'>ASISTENTE CONCRETÓN SUPERVISOR</h2>
-
+            {choices.map((choice : any) => {
+              console.log(choice);
+              return (
+                <div className={styles.response} key={choice.index}>
+                  <ReactMarkdown
+                    rehypePlugins={[rehypeHighlight]}
+                    components={{
+                      pre: ({ node, ...props } : {
+                        node: any;
+                        [key: string]: any;
+                      }) => (
+                        <pre className={styles.codeBlock} {...props} />
+                      ),
+                      code: ({ node, inline, ...props } : {
+                        node: any;
+                        inline: boolean;
+                        [key: string]: any;
+                      }) => (
+                        <code className={inline ? styles.inlineCode : styles.codeContent} {...props} />
+                      ),
+                    }}
+                  >
+                    {choice.message.content}
+                  </ReactMarkdown>
+                </div>
+              );
+            })}
             <PromptForm
               isLoading={isLoading}
               onSubmit={async (prompt : any) => {
@@ -67,29 +94,6 @@ export default function Tema() {
                 setChoices(result.choices);
               }}
             />
-
-            {choices.map((choice : any) => {
-              console.log(choice);
-              return (
-                <div key={choice.index} className='bg-black p-9'>
-                  <ReactMarkdown
-                    rehypePlugins={[rehypeHighlight]}
-                    components={{
-                      pre: ({ node, ...props }) => (
-                        <pre {...props} />
-                      ),
-                      code: ({ node, ...props }) => (
-                        <code {...props} />
-                      ),
-                    }}
-                  >
-                    {choice.message.content}
-                  </ReactMarkdown>
-                </div>
-              );
-            })}
-            
         </main>
     )
 }
-
