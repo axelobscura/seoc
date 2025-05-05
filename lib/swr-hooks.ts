@@ -33,6 +33,15 @@ export function useCapitulos(id: any) {
   }
 }
 
+export function useCategoria(idCategoria: any) {
+  const { data, error } = useSWR([`/api/get-categoria?idcategoria=`+idCategoria], fetcher)
+  return {
+    categoria: data,
+    isLoading: !error && !data,
+    isError: error,
+  }
+}
+
 export function useComite(norma: any, id: any) {
   const { data, error } = useSWR([`/api/get-comite?norma=`+norma+`&id=`+id], fetcher)
   return {

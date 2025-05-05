@@ -1,17 +1,27 @@
 "use client"
-import { useParams, useSearchParams } from 'next/navigation'
-import Link from 'next/link'
-import { useCapitulos } from '../../../../lib/swr-hooks'
-import Image from 'next/image'
-import Search from '@/app/components/Search'
-import Loader from '@/app/components/Loader'
+import { useState, useEffect } from 'react';
+import { useParams, useSearchParams } from 'next/navigation';
+import Link from 'next/link';
+import { useCapitulos } from '../../../../lib/swr-hooks';
+import Image from 'next/image';
+import Loader from '@/app/components/Loader';
 
 export default function Categoria() {
-    const params = useParams()
-    const searchParams = useSearchParams()
-    const search = searchParams.get('id')
+    const params = useParams();
+    const [categoria, setCategoria] = useState<{ nombre: string }[]>([]);
+    const searchParams = useSearchParams();
+    const search = searchParams.get('id');
 
     const {capitulos, isLoading} = useCapitulos(search);
+
+    useEffect(() => {
+        async function fetchPosts() {
+          const res = await fetch(`/api/get-categoria?idcategoria=${search}`);
+          const data = await res.json()
+          setCategoria(data)
+        }
+        fetchPosts()
+      }, []);
 
     if(isLoading){
         return(
@@ -19,8 +29,7 @@ export default function Categoria() {
         )
     }
 
-    let tit = params.categoria;
-    let titulo = (tit as string).split('-').join(' ').toUpperCase()
+    if (!categoria) return <Loader/>
     
     return (
         <main className="flex min-h-screen flex-col items-center justify-center p-24" style={{
@@ -36,6 +45,7 @@ export default function Categoria() {
             />
             <p className='font-smooch text-4xl text-gray-900 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
             <h2 className='font-smooch text-6xl text-bold text-uppercase text-gray-900 font-bold uppercase mb-0 mt-3 text-center bg-white px-20 py-2 rounded-full'>COMITÉ</h2>
+            <p className='font-smooch text-2xl text-bold text-uppercase text-gray-900 font-bold uppercase mb-0 mt-3 text-center bg-white px-20 py-2 rounded-full'>{categoria[0]?.nombre}</p>
             <div className="w-full grid sm:grid-cols-1 md:grid-cols-2 gap-2">
                 {capitulos.map((norma: any, index: any) => (
                     <Link 
@@ -44,6 +54,7 @@ export default function Categoria() {
                         href={{
                             pathname: `/fuente/aci/${norma.nombre}`,
                             query: { 
+                                idcategoria: search,
                                 norma: norma.nombre,
                                 id: norma.id
                             },
