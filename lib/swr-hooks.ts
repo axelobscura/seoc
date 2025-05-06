@@ -33,6 +33,15 @@ export function useCapitulos(id: any) {
   }
 }
 
+export function useComiteCatego(id: any) {
+  const { data, error } = useSWR([`/api/get-comitecatego?id=`+id], fetcher)
+  return {
+    capitulos: data,
+    isLoading: !error && !data,
+    isError: error,
+  }
+}
+
 export function useCategoria(idCategoria: any) {
   const { data, error } = useSWR([`/api/get-categoria?idcategoria=`+idCategoria], fetcher)
   return {

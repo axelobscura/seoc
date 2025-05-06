@@ -11,6 +11,17 @@ export default function Detalle() {
   const params = useParams();
   const [categoria, setCategoria] = useState<{ nombre: string }[]>([]);
   const [comite, setComite] = useState<{ descripcion: string }[]>([]);
+  const [comiteCatego, setComiteCatego] = useState<{ 
+    id_categoria: string,
+    nombre: string,
+    descripcion: string,
+  }[]>([]);
+  const [contenido, setContenido] = useState<{ 
+    categoria: string,
+    subcategoria: string,
+    titulo: string,
+    contenido: string,
+    descripcion: string }[]>([]);
   const searchParams = useSearchParams();
   const idcategoria = searchParams.get("idcategoria");
   const norma = searchParams.get("norma");
@@ -34,10 +45,24 @@ export default function Detalle() {
     fetchPostsComite()
   }, [categoria]);
 
-  // ?idcategoria=
+  useEffect(() => {
+    async function fetchPostsComite() {
+      const res = await fetch(`/api/get-contenido?norma=${norma}&id=${idcategoria}`);
+      const data = await res.json()
+      setContenido(data)
+    }
+    fetchPostsComite()
+  }, [comite]);
 
+  useEffect(() => {
+    async function fetchPostsComiteCatego() {
+      const res = await fetch(`/api/get-comitecatego?id=${idcategoria}`);
+      const data = await res.json()
+      setComiteCatego(data)
+    }
+    fetchPostsComiteCatego()
+  }, [comite]);
   if (!categoria) return <Loader/>
-
   return (
     <main
       className="flex min-h-screen flex-col w-full"
@@ -52,7 +77,7 @@ export default function Detalle() {
       <div className="grid grid-cols-[4fr_1fr] gap-4 min-h-screen">
         <div className="flex flex-col items-center justify-center">
           <div className="grid grid-cols-1 gap-4 mt-0 w-full px-20">
-            <div className="flex flex-col sm:flex-row items-center justify-start gap-3">
+            <div className="flex flex-col sm:flex-row items-start justify-start gap-3 pt-20">
               <button className="flex items-center font-smooch text-2xl rounded-full bg-white py-2 px-5 mt-1 uppercase text-gray-900 hover:text-gray-200 hover:bg-gray-800 my-2 font-bold">
                 <FaRegArrowAltCircleRight className="mr-2" /> {categoria[0]?.nombre}
               </button>
@@ -64,16 +89,48 @@ export default function Detalle() {
               </button>
             </div>
             <div className="bg-white bg-opacity-70 p-5 text-gray-900 py-9 rounded-lg shadow-lg">
-
+              <h2 className="font-smooch text-4xl text-gray-900 font-bold mb-5">
+                {comite[0]?.descripcion}
+              </h2>
+              <div className="grid grid-cols-1 gap-4">
+                {contenido.map((item, index) => (
+                  <>
+                    <button className="flex items-center font-smooch text-2xl rounded-full bg-black hover:bg-gray-100 sm:px-0 md:px-0 py-1 font-extralight w-full uppercase text-white mb-0 hover:text-gray-900 p-20 px-20 mt-2">
+                      <h3 className="text-3xl font-bold px-10">{item.titulo}</h3>
+                    </button>
+                    <div
+                      dangerouslySetInnerHTML={{__html: item.contenido}}
+                      className="px-20 text-justify"
+                    />
+                  </>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-        <div className="flex flex-col bg-gray-900 bg-opacity-70 min-h-screen justify-center items-center">
+        <div className="flex flex-col bg-gray-900 bg-opacity-70 min-h-screen justify-start items-start pt-44">
           <div className="px-5">
             <button className="font-smooch text-2xl rounded-full bg-black px-20 py-2 mt-1 uppercase text-white hover:bg-gray-800 border border-gray-800 w-full">
               COMITÉ
             </button>
-            <div className="my-5"></div>
+            <div className="my-5">
+              {comiteCatego.map((item, index) => (
+                <Link
+                  key={index}
+                  className="flex items-center font-smooch text-2xl rounded-full bg-white py-2 px-5 mt-1 uppercase text-gray-900 hover:text-gray-200 hover:bg-gray-800 my-2 font-bold"
+                  href={{
+                    pathname: `/fuente/aci/${item.nombre}`,
+                    query: {
+                      idcategoria: item.id_categoria,
+                      norma: item.nombre,
+                      id: id,
+                    },
+                  }}
+                >
+                  <FaRegArrowAltCircleRight className="mr-2" /> {item.nombre}
+                </Link>
+              ))}
+            </div>
             <Link
               href={`/fuente/aci/311/comparativa`}
               className="font-smooch text-2xl rounded-full bg-black px-20 py-2 mt-1 uppercase text-white hover:bg-gray-800 border border-gray-800 w-full"
