@@ -106,7 +106,7 @@ export default function Detalle() {
                     <button key={item.id} className="flex items-center font-smooch text-2xl rounded-full bg-black sm:px-0 md:px-0 py-1 font-extralight w-full uppercase text-white mb-0 p-20 px-20 mt-2">
                       <h3 className="flex items-center text-3xl font-bold px-10"><FaArrowAltCircleDown className="mr-3" /> {item.titulo}</h3>
                     </button>
-                    <div>{item.contenido}</div>
+                    <div className="px-20">{item.contenido}</div>
                   </>
                 ))}
               </div>
