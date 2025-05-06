@@ -20,6 +20,7 @@ export default function Detalle() {
     descripcion: string,
   }[]>([]);
   const [contenido, setContenido] = useState<{ 
+    id: number,
     categoria: string,
     subcategoria: string,
     titulo: string,
@@ -65,7 +66,11 @@ export default function Detalle() {
     }
     fetchPostsComiteCatego()
   }, [comite]);
+
+  console.log("contenido", contenido);
+
   if (!categoria) return <Loader/>
+  if (!contenido.length) return <Loader/>
   return (
     <main
       className="flex min-h-screen flex-col w-full"
@@ -98,13 +103,10 @@ export default function Detalle() {
               <div className="grid grid-cols-1 gap-4">
                 {contenido.map((item, index) => (
                   <>
-                    <button className="flex items-center font-smooch text-2xl rounded-full bg-black sm:px-0 md:px-0 py-1 font-extralight w-full uppercase text-white mb-0 p-20 px-20 mt-2">
+                    <button key={item.id} className="flex items-center font-smooch text-2xl rounded-full bg-black sm:px-0 md:px-0 py-1 font-extralight w-full uppercase text-white mb-0 p-20 px-20 mt-2">
                       <h3 className="flex items-center text-3xl font-bold px-10"><FaArrowAltCircleDown className="mr-3" /> {item.titulo}</h3>
                     </button>
-                    <div
-                      dangerouslySetInnerHTML={{__html: item.contenido}}
-                      className="px-10 text-justify"
-                    />
+                    <div>{item.contenido}</div>
                   </>
                 ))}
               </div>
