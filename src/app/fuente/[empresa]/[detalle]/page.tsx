@@ -6,6 +6,9 @@ import { useParams, useSearchParams } from "next/navigation";
 import Loader from "@/app/components/Loader";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { AiFillPlusSquare } from "react-icons/ai";
+import { FaCirclePlus } from "react-icons/fa6";
+import { FaArrowAltCircleDown } from "react-icons/fa";
+
 
 export default function Detalle() {
   const params = useParams();
@@ -89,18 +92,18 @@ export default function Detalle() {
               </button>
             </div>
             <div className="bg-white bg-opacity-70 p-5 text-gray-900 py-9 rounded-lg shadow-lg">
-              <h2 className="font-smooch text-4xl text-gray-900 font-bold mb-5">
-                {comite[0]?.descripcion}
+              <h2 className="flex item-center font-smooch text-4xl text-gray-900 font-bold mb-5">
+                <FaCirclePlus className="mr-2" /> {comite[0]?.descripcion}
               </h2>
               <div className="grid grid-cols-1 gap-4">
                 {contenido.map((item, index) => (
                   <>
-                    <button className="flex items-center font-smooch text-2xl rounded-full bg-black hover:bg-gray-100 sm:px-0 md:px-0 py-1 font-extralight w-full uppercase text-white mb-0 hover:text-gray-900 p-20 px-20 mt-2">
-                      <h3 className="text-3xl font-bold px-10">{item.titulo}</h3>
+                    <button className="flex items-center font-smooch text-2xl rounded-full bg-black sm:px-0 md:px-0 py-1 font-extralight w-full uppercase text-white mb-0 p-20 px-20 mt-2">
+                      <h3 className="flex items-center text-3xl font-bold px-10"><FaArrowAltCircleDown className="mr-3" /> {item.titulo}</h3>
                     </button>
                     <div
                       dangerouslySetInnerHTML={{__html: item.contenido}}
-                      className="px-20 text-justify"
+                      className="px-10 text-justify"
                     />
                   </>
                 ))}
