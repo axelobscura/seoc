@@ -12,14 +12,19 @@ import { useSearchParams } from 'next/navigation'
 export default function Tema() {
     const searchParams = useSearchParams();
     const [posts, setPosts] = useState([]);
-
     const empresa = searchParams.get('empresa');
 
     useEffect(() => {
         async function fetchPosts() {
-          const res = await fetch('/api/get-categorias')
-          const data = await res.json()
-          setPosts(data.reverse())
+            if(empresa === 'ASTM') {
+                const res = await fetch('/api/get-categorias-astm')
+                const data = await res.json()
+                setPosts(data.reverse())
+            } else {
+                const res = await fetch('/api/get-categorias')
+                const data = await res.json()
+                setPosts(data.reverse())
+            }
         }
         fetchPosts()
     }, []);
@@ -47,15 +52,16 @@ export default function Tema() {
             </Link>
             <p className='font-smooch text-smooch text-sm md:text-2xl text-gray-500 font-bold'><small>Supervisor Especializado en Obras de Concreto</small></p>
             <h2 className='font-smooch text-6xl text-gray-950 mb-2 border-b-2 border-gray-900 pb-3'>APRENDE O REFUERZA LO APRENDIDO</h2>
+            <h3 className='font-smooch text-2xl text-gray-100 bg-gray-900 py-3 px-10 md:px-36 mb-2 rounded-full shadow-lg mt-3'>{empresa}</h3>
             <Link href={`/secciones`}>
-                <h3 className='font-smooch text-2xl text-gray-950 bg-white py-3 px-10 md:px-36 mb-2 rounded-full shadow-lg mt-3'>SELECCIONA UN TEMA {empresa}</h3>
+                <h3 className='font-smooch text-2xl text-gray-950 bg-white py-3 px-10 md:px-36 mb-2 rounded-full shadow-lg mt-3'>SELECCIONA UN TEMA</h3>
             </Link>
             {/* <Search/> */}
-            <div className="max-w-6xl grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5">
+            <div className="max-w-6xl grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5 w-full">
                 {posts.map((val: any) => (
                     <Link 
                         key={val[0]} 
-                        href={`/categorias/${val.url}?id=${val.id}`} 
+                        href={`/categorias/${val.url}?id=${val.id}&empresa=${empresa}`} 
                         className='flex flex-row items-center justify-center'
                     >
                         <FaArrowAltCircleRight style={{

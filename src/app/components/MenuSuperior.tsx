@@ -9,12 +9,12 @@ export default function MenuSuperior() {
         <div className='fixed top-0 right-0 m-0'>
           <div className="flex flex-row bg-white bg-opacity-50 text-white p-5 items-center justify-center">
             <div>
-              <Link href='/' className="m-0 p-0 block">
+              <Link href='/fuente' className="m-0 p-0 block">
                 <HiArrowSmallLeft size={40} className="text-gray-900 border-2 border-gray-900 rounded-full p-1" />
               </Link>
             </div>
             <div>
-              <Link href='/' className="m-0 p-0 block ml-2">
+              <Link href='/fuente' className="m-0 p-0 block ml-2">
                 <FaHome size={43} className="text-gray-900 border-2 border-gray-900 rounded-full p-1" />
               </Link>
             </div>

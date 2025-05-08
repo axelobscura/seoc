@@ -33,6 +33,15 @@ export function useCapitulos(id: any) {
   }
 }
 
+export function useCapitulosAstm(id: any) {
+  const { data, error } = useSWR([`/api/get-capitulos-astm?id=`+id], fetcher)
+  return {
+    capitulosAstm: data,
+    isLoadingAstm: !error && !data,
+    isError: error,
+  }
+}
+
 export function useComiteCatego(id: any) {
   const { data, error } = useSWR([`/api/get-comitecatego?id=`+id], fetcher)
   return {
