@@ -92,6 +92,10 @@ export default function Detalle() {
 
   if (!categoria) return <Loader/>
   if (!contenido.length) return <Loader/>
+
+  console.log("contenido", contenido);
+  console.log("comite", comite);
+
   return (
     <main
       className="flex min-h-screen flex-col w-full"
@@ -108,19 +112,16 @@ export default function Detalle() {
           <div className="grid grid-cols-1 gap-4 mt-0 w-full px-20">
             <div className="flex flex-col sm:flex-row items-start justify-start gap-3 pt-20">
               <button className="flex items-center font-smooch text-2xl rounded-full bg-white py-2 px-5 mt-1 uppercase text-gray-900 hover:text-gray-200 hover:bg-gray-800 my-2 font-bold">
-                <FaRegArrowAltCircleRight className="mr-2" /> {categoria[0]?.nombre}
+                <FaRegArrowAltCircleRight className="mr-2" /> {empresa} | {categoria[0]?.nombre}
               </button>
               <button className="flex items-center font-smooch text-2xl rounded-full bg-gray-900 py-2 px-5 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 my-2 font-bold">
                 <AiFillPlusSquare className="mr-2" /> {norma}
               </button>
               <button className="flex items-center font-smooch text-2xl rounded-full bg-blue-900 py-2 px-5 mt-1 uppercase text-gray-100 hover:text-gray-200 hover:bg-gray-800 my-2 font-bold">
-                <AiFillPlusSquare className="mr-2" /> {comite[0]?.descripcion}
+                <AiFillPlusSquare className="mr-2" /> {contenido[0]?.categoria}
               </button>
             </div>
             <div className="bg-white bg-opacity-70 p-5 text-gray-900 py-9 rounded-lg shadow-lg">
-              <h2 className="flex item-center font-smooch text-4xl text-gray-900 font-bold mb-5">
-                <FaCirclePlus className="mr-2" /> {comite[0]?.descripcion}
-              </h2>
               <div className="grid grid-cols-1 gap-4">
                 {contenido.map((item, index) => (
                   <>
