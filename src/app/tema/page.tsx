@@ -20,6 +20,22 @@ export default function Tema() {
                 const res = await fetch('/api/get-categorias-astm')
                 const data = await res.json()
                 setPosts(data.reverse())
+            } else if(empresa === 'NMX'){
+                const res = await fetch('/api/get-categorias-nmx')
+                const data = await res.json()
+                setPosts(data.reverse())
+            } else if(empresa === 'CFE'){
+                const res = await fetch('/api/get-categorias-cfe')
+                const data = await res.json()
+                setPosts(data.reverse())
+            } else if(empresa === 'PCA'){
+                const res = await fetch('/api/get-categorias-pca')
+                const data = await res.json()
+                setPosts(data.reverse())
+            } else if(empresa === 'NTC'){
+                const res = await fetch('/api/get-categorias-ntc')
+                const data = await res.json()
+                setPosts(data.reverse())
             } else {
                 const res = await fetch('/api/get-categorias')
                 const data = await res.json()

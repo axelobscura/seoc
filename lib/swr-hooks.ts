@@ -42,6 +42,33 @@ export function useCapitulosAstm(id: any) {
   }
 }
 
+export function useCapitulosCfe(id: any) {
+  const { data, error } = useSWR([`/api/get-capitulos-cfe?id=`+id], fetcher)
+  return {
+    capitulosCfe: data,
+    isLoadingCfe: !error && !data,
+    isError: error,
+  }
+}
+
+export function useCapitulosNtc(id: any) {
+  const { data, error } = useSWR([`/api/get-capitulos-ntc?id=`+id], fetcher)
+  return {
+    capitulosNtc: data,
+    isLoadingNtc: !error && !data,
+    isError: error,
+  }
+}
+
+export function useCapitulosPca(id: any) {
+  const { data, error } = useSWR([`/api/get-capitulos-pca?id=`+id], fetcher)
+  return {
+    capitulosPca: data,
+    isLoadingPca: !error && !data,
+    isError: error,
+  }
+}
+
 export function useComiteCatego(id: any) {
   const { data, error } = useSWR([`/api/get-comitecatego?id=`+id], fetcher)
   return {

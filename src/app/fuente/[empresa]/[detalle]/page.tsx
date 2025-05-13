@@ -30,6 +30,7 @@ export default function Detalle() {
   const idcategoria = searchParams.get("idcategoria");
   const norma = searchParams.get("norma");
   const id = searchParams.get("id");
+  const empresa = searchParams.get("empresa");
 
   useEffect(() => {
     async function fetchPosts() {
@@ -51,7 +52,12 @@ export default function Detalle() {
 
   useEffect(() => {
     async function fetchPostsComite() {
-      const res = await fetch(`/api/get-contenido?norma=${norma}&id=${idcategoria}`);
+      let res;
+      if(empresa === 'ASTM') {
+        res = await fetch(`/api/get-contenido-astm?norma=${norma}&id=${idcategoria}`);
+      } else {
+        res = await fetch(`/api/get-contenido?norma=${norma}&id=${idcategoria}`);
+      }
       const data = await res.json()
       setContenido(data)
     }
@@ -60,7 +66,12 @@ export default function Detalle() {
 
   useEffect(() => {
     async function fetchPostsComiteCatego() {
-      const res = await fetch(`/api/get-comitecatego?id=${idcategoria}`);
+      let res;
+      if(empresa === 'ASTM') {
+        res = await fetch(`/api/get-comitecatego-astm?id=${idcategoria}`);
+      } else {
+        res = await fetch(`/api/get-comitecatego?id=${idcategoria}`);
+      }
       const data = await res.json()
       setComiteCatego(data)
     }
@@ -129,6 +140,7 @@ export default function Detalle() {
                       idcategoria: item.id_categoria,
                       norma: item.nombre,
                       id: id,
+                      empresa: empresa,
                     },
                   }}
                 >
