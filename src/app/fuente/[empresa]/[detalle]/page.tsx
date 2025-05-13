@@ -59,6 +59,8 @@ export default function Detalle() {
         res = await fetch(`/api/get-contenido-cfe?norma=${norma}&id=${idcategoria}`);
       } else if(empresa === 'NTC'){
         res = await fetch(`/api/get-contenido-ntc?norma=${norma}&id=${idcategoria}`);
+      } else if(empresa === 'PCA'){
+        res = await fetch(`/api/get-contenido-pca?norma=${norma}&id=${idcategoria}`);
       } else {
         res = await fetch(`/api/get-contenido?norma=${norma}&id=${idcategoria}`);
       }
@@ -77,6 +79,8 @@ export default function Detalle() {
         res = await fetch(`/api/get-comitecatego-cfe?id=${idcategoria}`);
       } else if(empresa === 'NTC'){
         res = await fetch(`/api/get-comitecatego-ntc?id=${idcategoria}`);
+      } else if(empresa === 'PCA'){
+        res = await fetch(`/api/get-comitecatego-pca?id=${idcategoria}`);
       } else {
         res = await fetch(`/api/get-comitecatego?id=${idcategoria}`);
       }
