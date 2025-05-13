@@ -55,6 +55,10 @@ export default function Detalle() {
       let res;
       if(empresa === 'ASTM') {
         res = await fetch(`/api/get-contenido-astm?norma=${norma}&id=${idcategoria}`);
+      } else if(empresa === 'CFE'){
+        res = await fetch(`/api/get-contenido-cfe?norma=${norma}&id=${idcategoria}`);
+      } else if(empresa === 'NTC'){
+        res = await fetch(`/api/get-contenido-ntc?norma=${norma}&id=${idcategoria}`);
       } else {
         res = await fetch(`/api/get-contenido?norma=${norma}&id=${idcategoria}`);
       }
@@ -69,6 +73,10 @@ export default function Detalle() {
       let res;
       if(empresa === 'ASTM') {
         res = await fetch(`/api/get-comitecatego-astm?id=${idcategoria}`);
+      } else if(empresa === 'CFE'){
+        res = await fetch(`/api/get-comitecatego-cfe?id=${idcategoria}`);
+      } else if(empresa === 'NTC'){
+        res = await fetch(`/api/get-comitecatego-ntc?id=${idcategoria}`);
       } else {
         res = await fetch(`/api/get-comitecatego?id=${idcategoria}`);
       }
@@ -77,8 +85,6 @@ export default function Detalle() {
     }
     fetchPostsComiteCatego()
   }, [comite]);
-
-  console.log("contenido", contenido);
 
   if (!categoria) return <Loader/>
   if (!contenido.length) return <Loader/>
