@@ -60,6 +60,15 @@ export function useCapitulosNtc(id: any) {
   }
 }
 
+export function useCapitulosNmx(id: any) {
+  const { data, error } = useSWR([`/api/get-capitulos-nmx?id=`+id], fetcher)
+  return {
+    capitulosNmx: data,
+    isLoadingNmx: !error && !data,
+    isError: error,
+  }
+}
+
 export function useCapitulosPca(id: any) {
   const { data, error } = useSWR([`/api/get-capitulos-pca?id=`+id], fetcher)
   return {

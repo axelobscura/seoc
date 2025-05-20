@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { useCapitulos, useCapitulosAstm, useCapitulosCfe, useCapitulosNtc, useCapitulosPca } from '../../../../lib/swr-hooks';
+import { useCapitulos, useCapitulosAstm, useCapitulosCfe, useCapitulosNtc, useCapitulosPca, useCapitulosNmx } from '../../../../lib/swr-hooks';
 import Image from 'next/image';
 import Loader from '@/app/components/Loader';
 
@@ -14,6 +14,7 @@ export default function Categoria() {
     const {capitulosAstm, isLoadingAstm} = useCapitulosAstm(search);
     const {capitulosCfe, isLoadingCfe} = useCapitulosCfe(search);
     const {capitulosNtc, isLoadingNtc} = useCapitulosNtc(search);
+    const {capitulosNmx, isLoadingNmx} = useCapitulosNmx(search);
     const {capitulosPca, isLoadingPca} = useCapitulosPca(search);
     const {capitulos, isLoading} = useCapitulos(search);
 
@@ -26,7 +27,7 @@ export default function Categoria() {
         fetchPosts()
       }, []);
 
-    if(isLoading || isLoadingAstm || isLoadingCfe || isLoadingNtc || isLoadingPca){
+    if(isLoading || isLoadingAstm || isLoadingCfe || isLoadingNtc || isLoadingPca || isLoadingNmx){
         return(
             <Loader />
         )
@@ -76,6 +77,26 @@ export default function Categoria() {
                         key={index}
                         href={{
                             pathname: `/fuente/cfe/${norma.nombre}`,
+                            query: { 
+                                idcategoria: search,
+                                norma: norma.nombre,
+                                id: norma.id,
+                                empresa: empresa
+                            },
+                        }}
+                    >
+                        <button className="font-smooch rounded-full bg-black hover:bg-gray-100 sm:px-0 md:px-0 py-1 font-extralight w-full uppercase text-white mb-0 hover:text-gray-900 px-20 mt-5">
+                            <h3 className='text-3xl font-bold'>{norma.nombre}</h3>
+                            <p className='text-1xl'>{norma.descripcion}</p>
+                        </button>
+                    </Link>
+                ))}
+                {empresa === 'NMX' && capitulosNmx.map((norma: any, index: any) => (
+                    <Link 
+                        className='w-full' 
+                        key={index}
+                        href={{
+                            pathname: `/fuente/nmx/${norma.nombre}`,
                             query: { 
                                 idcategoria: search,
                                 norma: norma.nombre,

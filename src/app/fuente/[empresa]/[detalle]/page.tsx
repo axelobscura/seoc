@@ -61,6 +61,8 @@ export default function Detalle() {
         res = await fetch(`/api/get-contenido-ntc?norma=${norma}&id=${idcategoria}`);
       } else if(empresa === 'PCA'){
         res = await fetch(`/api/get-contenido-pca?norma=${norma}&id=${idcategoria}`);
+      } else if(empresa === 'NMX'){
+        res = await fetch(`/api/get-contenido-nmx?norma=${norma}&id=${idcategoria}`);
       } else {
         res = await fetch(`/api/get-contenido?norma=${norma}&id=${idcategoria}`);
       }
@@ -92,9 +94,6 @@ export default function Detalle() {
 
   if (!categoria) return <Loader/>
   if (!contenido.length) return <Loader/>
-
-  console.log("contenido", contenido);
-  console.log("comite", comite);
 
   return (
     <main
