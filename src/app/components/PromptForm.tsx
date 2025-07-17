@@ -19,7 +19,7 @@ export default function PromptForm({ onSubmit, isLoading } : {
         onSubmit(prompt);
         setPrompt("");
       }}
-      className="flex items-center justify-center"
+      className="flex items-center justify-center w-full"
     >
       <input
         className="rounded-full p-5 text-gray-800 text-2xl my-4 w-full"

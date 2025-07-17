@@ -24,7 +24,7 @@ export default function Login() {
     const testEmail = "ruribe@imcyc.com";
     const pwd = "12345";
     if (email === testEmail && password === pwd) {
-      router.push("/fuente");
+      router.push("/tema?empresa=ACI");
     }
     if (isError) {
       alert("Error: " + isError);
